@@ -326,6 +326,39 @@
 
   ::selection { background: var(--accent); color: var(--bg); }
 
+  /* footnotes */
+  .fn {
+    position: relative;
+    cursor: help;
+    border-bottom: 1px dotted var(--dim);
+  }
+
+  .fn .fn-text {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: #1a1a1a;
+    border: 1px solid var(--accent-dim);
+    color: var(--dim);
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 10px 14px;
+    width: 280px;
+    z-index: 10;
+    border-radius: 2px;
+  }
+
+  .fn:hover .fn-text,
+  .fn:active .fn-text {
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .fn .fn-text { width: 220px; left: -40px; }
+  }
+
   /* fade-in for paragraphs */
   .fade-in {
     opacity: 1;
@@ -372,7 +405,7 @@
 
 <p class="fade-in">The model wasn't required. I write for a living and I've written research reports that closed six-figure deals. I once wrote a 40-minute musical set and performed it on Kyryllivs'ka. The capacity was there, fully intact, but somewhere between spring and autumn I'd stopped trusting that I could produce adequate prose without the machine. The skill hadn't atrophied. My confidence in it had.</p>
 
-<p class="fade-in">Ivan Illich had a word for this. In <em>Medical Nemesis</em> (1975), he called it iatrogenesis, when the healthcare system itself becomes the source of illness. He didn't mean malpractice. He meant the institution destroying the very capacity it claims to support. Patients who can no longer heal without hospitals, students who can no longer learn without schools. I was looking at the cognitive version, self-inflicted and entirely voluntary.</p>
+<p class="fade-in">Ivan Illich had a word for this. In <em>Medical Nemesis</em> (1975), he called it <span class="fn">iatrogenesis<span class="fn-text">From Greek: iatros (healer) + genesis (origin). Illness caused by the healing system itself.</span></span>, when the healthcare system itself becomes the source of illness. He didn't mean malpractice. He meant the institution destroying the very capacity it claims to support. Patients who can no longer heal without hospitals, students who can no longer learn without schools. I was looking at the cognitive version, self-inflicted and entirely voluntary.</p>
 
 <div class="section-image">
   <img src="img/01-screen-diary.png" alt="Screen diary visualization" loading="lazy">
@@ -382,7 +415,7 @@
 
 <p class="fade-in">Some context on why this hit differently for me.</p>
 
-<p class="fade-in">I've been displaced twice, Minsk to Kyiv after the 2020 election, then Kyiv to Lisbon after February 2022. Each crossing stripped away another layer of institutional identity: degrees that don't transfer, professional networks that evaporate at the border. My Belarusian diploma got me meetings in Minsk but was decorative paper in Kyiv, and the Kyiv network I rebuilt over two years became a contact list of people scattered across a dozen countries.</p>
+<p class="fade-in">I've been displaced twice, Minsk to Kyiv in 2020, then Kyiv to Lisbon after February 2022. Each crossing stripped away another layer of institutional identity: degrees that don't transfer, professional networks that evaporate at the border. My EMBA from IPM, my IKRA creative school certificate, they got me meetings in Minsk but were decorative paper in Kyiv, and the Kyiv network I rebuilt over two years became a contact list of people scattered across a dozen countries.</p>
 
 <p class="fade-in">What survives that kind of displacement is a raw decision-making capacity. You learn to operate without the scaffolding, no alma mater network, no career ladder anyone recognizes. Just your judgment and whatever fits in your head when you cross a border on short notice. This is the thing about immigrants that people who've stayed put don't always see: we've already been stripped to the шасси, the chassis. We know exactly what's ours and what was borrowed from the environment. Or at least we think we do.</p>
 
@@ -396,7 +429,7 @@
 
 <p class="fade-in">In <em>Tools for Conviviality</em> (1973), Illich proposed something like a test, though he'd probably hate me calling it that. He wasn't handing out evaluation frameworks. He was questioning the assumptions that make you think you need one in the first place. But I'm a consultant by training, so I read him and immediately started distilling criteria. Old habits.</p>
 
-<p class="fade-in">Here's my distillation, not his checklist: a tool is convivial if anyone can use it without special certification, if it serves the user's purpose rather than the creator's, if one person's use doesn't degrade it for another, and if it creates no obligation to keep using it.</p>
+<p class="fade-in">Here's what I got out of it: a tool is convivial if anyone can use it without special certification, if it serves the user's purpose rather than the creator's, if one person's use doesn't degrade it for another, and if it creates no obligation to keep using it.</p>
 
 <p class="fade-in">When I first read these I thought they were obvious. Then I tried to name a single digital tool in my daily stack that passes all four and couldn't do it.</p>
 
@@ -404,7 +437,7 @@
 
 <p class="fade-in">Take ChatGPT or Claude. The first three criteria arguably pass: anyone with internet access can use them, they broadly serve user purposes, and one person's query doesn't diminish another's.</p>
 
-<p class="fade-in">The fourth criterion has a name. Illich called it radical monopoly, and it's where the whole thing collapses, quietly, without anyone voting on it. Job listings now require "AI proficiency." Universities permit AI-assisted essays, which sounds progressive until you realize unassisted essays now look suspiciously underperforming. Publishers assume AI editing as baseline. Clients ask why your research report doesn't have the polish of an AI-generated document. The environment reshapes around the tool until opting out becomes a competitive handicap.</p>
+<p class="fade-in">The fourth criterion has a name. Illich called it <span class="fn">radical monopoly<span class="fn-text">When one type of product reshapes reality so alternatives become impractical. Not brand dominance, but category dominance.</span></span>, and it's where the whole thing collapses, quietly, without anyone voting on it. Job listings now require "AI proficiency." Universities permit AI-assisted essays, which sounds progressive until you realize unassisted essays now look suspiciously underperforming. Publishers assume AI editing as baseline. Clients ask why your research report doesn't have the polish of an AI-generated document. The environment reshapes around the tool until opting out becomes a competitive handicap.</p>
 
 <p class="fade-in">Cars didn't just outcompete buses. They rebuilt entire cities, highways, suburbs, parking lots, until walking stopped being a viable way to get around. The car didn't win a fair race against the bus. It redesigned the entire city until walking wasn't an option.</p>
 
@@ -414,7 +447,7 @@
 
 <p class="fade-in">I recognized the pattern from border crossings. At each one, I learned how deeply my capacity depended on institutional infrastructure I couldn't see until it vanished. Radical monopoly works the same way: you don't notice the dependency until you try to opt out and discover the world has been quietly restructured around the assumption that you won't. AI does the same thing to cognition, reshaping the environment until unaugmented thinking looks like walking on the freeway. It doesn't have to be better than human thought. It just has to make the alternative feel impractical.</p>
 
-<p class="fade-in">Žižek once made a point about cynical distance that I keep coming back to here. Under authoritarian regimes, the subject can at least maintain inner resistance: "I know this is oppression, I know this isn't freedom." Under liberal democracy, or under voluntary tool adoption, you think you're free, so you don't even have that internal friction. The voluntariness of AI tools is exactly this. You chose it, so you can't name the capture. Illich's version is quieter but identical in structure: you don't recognize the labor as labor because you chose it.</p>
+<p class="fade-in">Žižek once made a point about cynical distance that I keep coming back to here. We're both from Eastern Europe so the examples with authoritarian politicians land faster. Under authoritarian regimes, the subject can at least maintain inner resistance: "I know this is oppression, I know this isn't freedom." Under voluntary tool adoption, you think you're free, so you don't even have that internal friction. The voluntariness of AI tools is exactly this. You chose it, so you can't name the capture. Illich's version is quieter but identical in structure: you don't recognize the labor as labor because you chose it.</p>
 
 <p class="fade-in">Running your own model on your own hardware gets closer to convivial, no subscription, no data leaving your machine. But a decent local setup requires a thousand-dollar GPU and command-line literacy that maybe five percent of the population has, and the convivial tool that demands expertise recreates the professional monopoly Illich found in medicine: healing confiscated by doctors, patients needing permission to understand their own bodies. Self-hosting is convivial for the technically literate. For everyone else, it's a monastery with a very specific entrance exam.</p>
 
@@ -425,7 +458,7 @@
 <p class="fade-in">I can trace the specific inversion in my own workflow. I wasn't watching for it at the time, but I went looking after the screen diary made it impossible to ignore.</p>
 
 <div class="workflow">
-  <strong>Early 2025:</strong> think <span class="arrow">→</span> draft outline <span class="arrow">→</span> use Claude for research <span class="arrow">→</span> write the piece myself<br>
+  <strong>Early 2025:</strong> think <span class="arrow">→</span> draft outline <span class="arrow">→</span> use GPT/Gemini for research <span class="arrow">→</span> write the piece myself<br>
   <strong>Late 2025:</strong> open Claude <span class="arrow">→</span> describe what I want to think about <span class="arrow">→</span> generate draft <span class="arrow">→</span> edit output<br>
   <strong>March 2026:</strong> tell Promen what to think about <span class="arrow">→</span> Promen spawns critics, editors, sub-agents <span class="arrow">→</span> approve
 </div>
@@ -442,9 +475,9 @@
 
 <h2>shadow work</h2>
 
-<p class="fade-in">I don't even write prompts anymore. I build Skills, reusable instruction sets that tell my AI agents how to behave, what voice to use, which critics to spawn, how many rounds to run. Think of it as management by policy: instead of telling the AI what to do each time, you write the standing orders once and let it run. I build them for myself and for others. I named my agents. Promen writes my essays. Stacy handles research. I'm not prompting a model. I'm architecting a workforce.</p>
+<p class="fade-in">I don't even write prompts anymore. I build <span class="fn">Skills<span class="fn-text">Reusable instruction sets for AI agents. Define voice, behavior, workflow, review rounds. Think: job description for a machine.</span></span>, reusable instruction sets that tell my AI agents how to behave, what voice to use, which critics to spawn, how many rounds to run. Think of it as management by policy: instead of telling the AI what to do each time, you write the standing orders once and let it run. I build them for myself and for others. I named my agents. <span class="fn">Promen<span class="fn-text">My personal AI assistant running on OpenClaw. Has access to all my documents, memory, preferences, and Skills. Named after "промень" (ray of light).</span></span>, my personal AI running on OpenClaw with all my data and Skills, writes my essays. Stacy handles research. I'm not prompting a model. I'm architecting a workforce.</p>
 
-<p class="fade-in">Last week I spent ninety minutes building a Skill for a research task I could have done myself in two hours. I felt productive the entire time, and then I looked at what I'd actually done: I'd designed someone else's job and called it creative practice.</p>
+<p class="fade-in">Last week I spent ninety minutes building a Skill, a reusable board-of-critics pipeline that spawns five experts, runs three rounds of review, and synthesizes their output into a single document. I could have just thought it through myself in two hours. I felt productive the entire time, and then I looked at what I'd actually done: I'd designed someone else's job and called it creative practice.</p>
 
 <div class="section-image">
   <img src="img/05-shadow-work.png" alt="Shadow work" loading="lazy">
@@ -463,9 +496,9 @@
 
 <p class="fade-in">A few weeks ago, my wife was going through something difficult. The specifics are hers, not mine.</p>
 
-<p class="fade-in">I didn't sit down with her. Didn't ask how she was feeling. The thing a person who loves someone does, which is to be present in the room with them and listen, never crossed my mind.</p>
+<p class="fade-in">I didn't sit down with her. I didn't ask how she was feeling. I didn't do the thing that a person who loves another person does, which is to be present in the room with them and listen.</p>
 
-<p class="fade-in">Instead, I opened a chat window and started typing out her situation. Describing it, analyzing it, looking for patterns. Asking the model what I should do.</p>
+<p class="fade-in">I opened a chat with my AI assistant. And I started typing out her situation. Describing it. Analyzing it. Breaking it into components. Looking for patterns. Asking the model what I should do.</p>
 
 <div class="section-image">
   <img src="img/07-same-room-alt.png" alt="" loading="lazy">
@@ -475,7 +508,7 @@
 
 <p class="fade-in">Illich wrote about the Samaritan, a man who sees someone suffering and stops. No institution between them. One person in the room with another. His fear was that we'd systematize that response until the impulse to stop disappears. I didn't stop. I opened a chat window.</p>
 
-<p class="fade-in">I don't know how to end this cleanly.</p>
+<p class="fade-in">I don't know how to end this cleanly. I don't think I should.</p>
 </div>
 
 <div class="signoff">
@@ -508,8 +541,8 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.15,
-  rootMargin: '0px 0px -40px 0px'
+  threshold: 0.01,
+  rootMargin: '200px 0px 200px 0px'
 });
 
 // Observe all animated elements
