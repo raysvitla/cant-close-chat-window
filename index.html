@@ -168,12 +168,17 @@
   .section-image img {
     width: 100%;
     display: block;
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
 
-  .section-image img.visible {
+  .js-loaded .section-image img {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .js-loaded .section-image img.visible {
     opacity: 1;
     transform: translateY(0);
   }
@@ -201,12 +206,17 @@
     border-left: 3px solid var(--accent);
     padding: 20px 0 20px 30px;
     margin: 2.5em 0 2.5em -30px;
-    opacity: 0;
-    transform: translateX(-10px);
+    opacity: 1;
+    transform: translateX(0);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
-  .pull.visible {
+  .js-loaded .pull {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  .js-loaded .pull.visible {
     opacity: 1;
     transform: translateX(0);
   }
@@ -318,12 +328,17 @@
 
   /* fade-in for paragraphs */
   .fade-in {
-    opacity: 0;
-    transform: translateY(12px);
+    opacity: 1;
+    transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
-  .fade-in.visible {
+  .js-loaded .fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  .js-loaded .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
   }
@@ -515,6 +530,9 @@
 </footer>
 
 <script>
+// Enable animations only if JS works
+document.documentElement.classList.add('js-loaded');
+
 // Intersection Observer for fade-in animations
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
