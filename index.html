@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE CONVIVIAL TEST — Ray Svitla</title>
+<meta name="description" content="When tools start using you. Applying Ivan Illich's conviviality framework to AI, crypto, and personal sovereignty.">
+<meta property="og:title" content="The Convivial Test: When Tools Start Using You">
+<meta property="og:description" content="I tracked my screen for sixteen days. I hadn't written a paragraph without AI in over three months.">
+<meta property="og:type" content="article">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #0a0a0a;
+    --fg: #e8e8e8;
+    --dim: #666;
+    --accent: #ff3b00;
+    --accent-dim: #ff3b0033;
+    --accent-glow: #ff3b0015;
+    --grid: #1a1a1a;
+    --mono: 'Space Mono', monospace;
+    --sans: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* grid overlay with subtle pulse */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+    animation: gridPulse 8s ease-in-out infinite;
+  }
+
+  @keyframes gridPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.15; }
+  }
+
+  /* header */
+  .header {
+    position: relative;
+    z-index: 1;
+    padding: 80px 40px 60px;
+    border-bottom: 1px solid var(--grid);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 30px;
+  }
+
+  .header-meta .accent { color: var(--accent); }
+
+  h1 {
+    font-family: var(--sans);
+    font-size: clamp(42px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  h1 .sub {
+    display: block;
+    font-size: clamp(16px, 2.5vw, 28px);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    color: var(--dim);
+    margin-top: 15px;
+    line-height: 1.4;
+  }
+
+  /* scrolling strip */
+  .strip {
+    position: relative;
+    z-index: 1;
+    background: var(--accent);
+    color: var(--bg);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 12px 40px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .strip-inner {
+    display: inline-block;
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* content */
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 40px 120px;
+  }
+
+  .content p { margin-bottom: 1.4em; }
+
+  .content h2 {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 3.5em;
+    margin-bottom: 1.5em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--accent-dim);
+  }
+
+  .content em { font-style: italic; color: #ccc; }
+
+  /* images between sections */
+  .section-image {
+    position: relative;
+    z-index: 1;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 3em;
+    margin-bottom: 3em;
+    overflow: hidden;
+  }
+
+  .section-image img {
+    width: 100%;
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .section-image img.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* red line separator — animated draw */
+  .redline {
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    margin: 3em auto;
+    transition: width 1.2s ease;
+  }
+
+  .redline.visible {
+    width: 120px;
+  }
+
+  /* pull quote */
+  .pull {
+    font-family: var(--sans);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--fg);
+    border-left: 3px solid var(--accent);
+    padding: 20px 0 20px 30px;
+    margin: 2.5em 0 2.5em -30px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .pull.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* workflow arrows */
+  .workflow {
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 2.2;
+    color: var(--dim);
+    padding: 20px 0;
+    margin: 1.5em 0;
+  }
+
+  .workflow .label { color: var(--accent); font-weight: 700; }
+  .workflow .arrow { color: var(--fg); }
+
+  /* the final section — subtle red glow */
+  .final-section {
+    position: relative;
+  }
+
+  .final-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100px; right: -100px; bottom: 0;
+    background: radial-gradient(ellipse at center top, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+  }
+
+  .final-section.visible::before {
+    opacity: 1;
+  }
+
+  /* cursor blink animation for "she was in the same room" */
+  .blink-cursor::after {
+    content: '█';
+    animation: blink 1s step-end infinite;
+    color: var(--accent);
+    font-size: 0.9em;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* sign-off */
+  .signoff {
+    margin-top: 4em;
+    padding-top: 2em;
+    border-top: 1px solid var(--grid);
+    text-align: center;
+  }
+
+  .signoff .snail {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 15px;
+    animation: snailBreathe 4s ease-in-out infinite;
+  }
+
+  @keyframes snailBreathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .signoff .credit {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--dim);
+  }
+
+  /* footer */
+  .footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--grid);
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 0.1em;
+  }
+
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* mobile */
+  @media (max-width: 600px) {
+    .header { padding: 40px 20px 30px; }
+    .content { padding: 40px 20px 80px; }
+    .pull { margin-left: 0; padding-left: 20px; font-size: 20px; }
+    .footer { flex-direction: column; gap: 10px; padding: 20px; }
+    body { font-size: 16px; }
+    .section-image { margin-top: 2em; margin-bottom: 2em; }
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  /* fade-in for paragraphs */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-meta">
+    <span class="accent">404Embassy</span>
+    <span>Ray Svitla</span>
+    <span>March 2026</span>
+    <span>Lisbon</span>
+  </div>
+  <h1>
+    The Convivial<br>Test
+    <span class="sub">when tools start using you</span>
+  </h1>
+</header>
+
+<div class="strip">
+  <span class="strip-inner">
+    ILLICH 1973 □ TOOLS FOR CONVIVIALITY □ SHADOW WORK 1981 □ MEDICAL NEMESIS 1975 □ RADICAL MONOPOLY □ SECOND WATERSHED □ CULTURAL IATROGENESIS □ CORRUPTIO OPTIMI QUAE EST PESSIMA □&nbsp;&nbsp;&nbsp;&nbsp;
+    ILLICH 1973 □ TOOLS FOR CONVIVIALITY □ SHADOW WORK 1981 □ MEDICAL NEMESIS 1975 □ RADICAL MONOPOLY □ SECOND WATERSHED □ CULTURAL IATROGENESIS □ CORRUPTIO OPTIMI QUAE EST PESSIMA □&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>
+</div>
+
+<article class="content">
+
+<!-- ▪ OPENING -->
+<p class="fade-in">I tracked my screen for sixteen days in late 2025. Standard productivity audit. The kind you do when you suspect your days are leaking somewhere but can't name the drain.</p>
+
+<p class="fade-in">The audit found the drain. I hadn't written a single paragraph without consulting an AI in over three months.</p>
+
+<p class="fade-in">Not because the model was required. I write for a living. I've written research reports that closed six-figure deals. I once wrote a 40-minute musical set and performed it on Kyryllivs'ka. The capacity was there. But somewhere between spring and autumn, I'd stopped trusting that I could produce adequate prose without the machine.</p>
+
+<p class="fade-in">Ivan Illich had a word for this. In <em>Medical Nemesis</em> (1975), he called it iatrogenesis — when the healthcare system itself becomes the source of illness. Not malpractice. Something worse: the institution destroying the very capacity it claims to support. Patients who can no longer heal without hospitals. Students who can no longer learn without schools.</p>
+
+<p class="fade-in">I was looking at the cognitive version. Self-inflicted. Voluntary.</p>
+
+<!-- IMAGE 1: Screen diary bars -->
+<div class="section-image">
+  <img src="img/01-screen-diary.jpg" alt="Screen diary visualization" loading="lazy">
+</div>
+
+<!-- ▪ DISPLACEMENT -->
+<h2>minsk → kyiv → lisbon</h2>
+
+<p class="fade-in">Some context on why this hit differently for me.</p>
+
+<p class="fade-in">I've been displaced three times. Minsk to Kyiv to Lisbon. Each crossing stripped away another layer of institutional identity. Degrees that don't transfer. Professional networks that evaporate at the border. Reputation that means nothing in a new language. The Belarusian diploma that got me meetings in Minsk was decorative paper in Kyiv. The Kyiv network I rebuilt over two years became a contact list of people scattered across a dozen countries after February 2022.</p>
+
+<p class="fade-in">What survives displacement is a raw decision-making capacity. You learn to operate without the scaffolding. No alma mater network. No legible career ladder. Just your judgment and whatever you can carry in your head across a border at short notice.</p>
+
+<p class="fade-in">This is the thing about immigrants that people who've stayed put don't always see: we've already been stripped to the chassis. We know exactly what's ours and what was borrowed from the environment. Or at least we think we do.</p>
+
+<p class="fade-in">The screen diary showed me that this capacity — the one thing displacement couldn't take — was being quietly mediated by a tool I'd invited in myself. Not imposed by a state. Not required by an employer. Chosen freely, daily, until the choosing became invisible.</p>
+
+<p class="fade-in">I'd been through three borders. Each one taught me the same lesson: institutions will fail you, so build your own capacity. And then I handed that capacity to an API endpoint, one convenient autocomplete at a time.</p>
+
+<!-- IMAGE 2: Three borders collage -->
+<div class="section-image">
+  <img src="img/02-displacement.jpg" alt="Three borders" loading="lazy">
+</div>
+
+<!-- ▪ ILLICH'S TEST -->
+<h2>illich's test</h2>
+
+<p class="fade-in">In <em>Tools for Conviviality</em> (1973), Illich proposed something like a test — though he'd probably hate me calling it that. He wasn't handing out evaluation frameworks. He was questioning the assumptions that make you think you need an evaluation framework at all. But I'm a consultant by training, so I read him and immediately started distilling criteria. Old habits.</p>
+
+<p class="fade-in">Here's my distillation, not his checklist: A tool is convivial if anyone can use it without special certification. If it serves the user's purpose, not the creator's. If one person's use doesn't degrade it for another. And if it creates no obligation to keep using it.</p>
+
+<p class="fade-in">When I first read these I thought — okay, this is obvious. Then I tried to name a single digital tool in my daily stack that passes all four. Couldn't.</p>
+
+<div class="redline"></div>
+
+<!-- ▪ RADICAL MONOPOLY -->
+<h2>the new radical monopoly</h2>
+
+<p class="fade-in">Take ChatGPT or Claude. The first three criteria arguably pass. Anyone with internet access can use them. They broadly serve user purposes. One person's query doesn't diminish another's.</p>
+
+<p class="fade-in">The fourth criterion is where it collapses. Quietly, without anyone voting on it.</p>
+
+<p class="fade-in">Job listings now require "AI proficiency." Universities permit AI-assisted essays — which sounds progressive until you realize unassisted essays now look suspiciously underperforming. Publishers assume AI editing as baseline. Clients ask why your research report doesn't have the polish of an AI-generated document.</p>
+
+<p class="fade-in">Illich had a concept for this: radical monopoly. Cars didn't just outcompete buses. They rebuilt cities — highways, suburbs, parking lots — until walking stopped being a viable way to get around. The car didn't win a fair race. It redesigned the track.</p>
+
+<!-- IMAGE 3: Highway interchange → neural network -->
+<div class="section-image">
+  <img src="img/03-radical-monopoly.jpg" alt="Radical monopoly" loading="lazy">
+</div>
+
+<p class="fade-in">I recognized the pattern from border crossings. At each one, I learned how deeply my capacity depended on institutional infrastructure I couldn't see until it vanished. Radical monopoly works the same way. You don't notice the dependency until you try to opt out and discover the world has been quietly restructured around the assumption that you won't.</p>
+
+<p class="fade-in">AI is doing this to cognition. Not by being better than human thought, but by reshaping the environment until unaugmented thinking looks like walking on the freeway.</p>
+
+<p class="fade-in">Running your own model on your own hardware gets closer to convivial — no subscription, no data leaving your machine. But a decent local setup requires a thousand-dollar GPU and command-line literacy that maybe five percent of the population has. The convivial tool that demands expertise recreates the professional monopoly Illich found in medicine: healing confiscated by doctors, patients needing permission to understand their own bodies. Self-hosting is convivial for the technically literate. For everyone else, it's a monastery with a very specific entrance exam.</p>
+
+<p class="fade-in">Crypto has the same structure. Self-custodial wallets — your keys, your money, no bank, no intermediary. Beautiful architecture. Then you hit seed phrases, gas fees, bridge protocols, smart contract approvals you can't read. The complexity creates its own priesthood: a new mediating class between you and the tool that was supposed to eliminate mediating classes. The tool promising liberation from institutions generates its own institution.</p>
+
+<!-- ▪ THE CROSSING MOMENT -->
+<h2>the crossing moment</h2>
+
+<p class="fade-in">I can trace the specific inversion in my own workflow. Not because I was watching for it. Because I went looking after the screen diary made it impossible to ignore.</p>
+
+<div class="workflow fade-in">
+  <span class="label">Early 2025:</span> think <span class="arrow">→</span> draft outline <span class="arrow">→</span> use Claude for research <span class="arrow">→</span> write the piece myself<br>
+  <span class="label">Late 2025:</span> open Claude <span class="arrow">→</span> describe what I want to think about <span class="arrow">→</span> generate draft <span class="arrow">→</span> edit output
+</div>
+
+<p class="fade-in">Same tools. Same person. The arrows point in opposite directions. In the first, I'm using a tool. In the second, I'm supervising one.</p>
+
+<p class="fade-in">My credit lines shifted from "designed by Ray, drafted with Claude" to "drafted by Claude, approved by Ray." Two words swapped. The entire creative relationship inverted.</p>
+
+<!-- IMAGE 4: Workflow inversion collage -->
+<div class="section-image">
+  <img src="img/04-crossing-moment.jpg" alt="Workflow inversion" loading="lazy">
+</div>
+
+<div class="pull">I noticed it the day I needed to write my own contract terms. Equity split, bonuses, KPIs — for the company I work for. The document that defines my own professional life. I know this stuff cold. I opened a chat with my AI assistant and started typing.</div>
+
+<p class="fade-in">Not because I couldn't do it. Because it didn't occur to me to try. The blank page wasn't hostile — it was simply absent from the workflow. The step where I sit down and think through what I actually want, what I'm worth, what I refuse — that step had been replaced by "describe it to the model and let it draft something." For my own contract. The terms of my own labor, drafted by a machine I prompted.</p>
+
+<p class="fade-in">I'm writing this essay the same way. Right now. An essay about AI dependency, produced through an AI pipeline — critics, editors, sub-agents, multiple rounds of machine-assisted revision. The irony isn't subtle. It's the whole point.</p>
+
+<p class="fade-in">Every individual decision made sense. I'm busy. The tool is fast. Why wouldn't I use it? But you zoom out over three months and the pattern is clear: I stopped writing. I started approving.</p>
+
+<!-- ▪ SHADOW WORK -->
+<h2>shadow work</h2>
+
+<p class="fade-in">Last week I spent ninety minutes writing a system prompt for a research task I could have done myself in two hours. I was structuring the query, specifying the output format, listing edge cases, defining the persona the model should adopt. Ninety minutes. I felt productive the entire time.</p>
+
+<p class="fade-in">Then I looked at what I'd actually done. I'd performed someone else's R&D and called it creative practice.</p>
+
+<!-- IMAGE 5: Shadow work cross-section -->
+<div class="section-image">
+  <img src="img/05-shadow-work.jpg" alt="Shadow work" loading="lazy">
+</div>
+
+<p class="fade-in">Illich had a name for this kind of labor. In <em>Shadow Work</em> (1981), he described the invisible complement to wage labor — the unpaid work the industrial system requires to function. The housework that enables the wage earner. The commute that delivers you to the office. The self-checkout that hands you the cashier's job for free.</p>
+
+<p class="fade-in">Prompt engineering is shadow work. The hours structuring queries, correcting hallucinations, reformatting outputs — this is labor that trains future models, generates value for the platform, keeps the engagement metrics ticking. And unlike the self-checkout, which at least feels like work, prompt engineering feels like craft. Nobody forces you to do it — Illich's shadow work was compulsory, the commute you couldn't refuse — but that voluntariness makes prompt engineering more extractive, not less. You don't recognize the labor as labor because you chose it.</p>
+
+<div class="redline"></div>
+
+<!-- ▪ TEST AS PRACTICE -->
+<h2>the test as practice</h2>
+
+<p class="fade-in">I tried writing a checklist. Monthly audit. Four criteria. Shadow work diagnostic. Sovereignty score. It looked great. It looked like a Substack post that would get a lot of bookmarks and change nothing.</p>
+
+<p class="fade-in">What I actually do is messier. I notice when I haven't written anything from scratch in a week, and I force myself to sit with paper and pen. No screen. It's uncomfortable every time.</p>
+
+<!-- ▪ WHAT THE TOOL TOOK LAST -->
+<div class="final-section">
+<h2>what the tool took last</h2>
+
+<p class="fade-in">I keep thinking the story here is about writing. About cognition. About the slow erosion of a skill I used to trust. That's the version that's safe to publish. The screen diary, the blank page, the system prompt that ate ninety minutes — it's uncomfortable, but it's contained. It's about work.</p>
+
+<p class="fade-in">The thing I haven't said yet isn't about work.</p>
+
+<p class="fade-in">A few weeks ago, my wife was going through something difficult. I'll leave the details out — they're hers, not mine. What matters is what I did.</p>
+
+<p class="fade-in">I didn't sit down with her. I didn't ask how she was feeling. I didn't do the thing that a person who loves another person does, which is to be present in the room with them and listen.</p>
+
+<p class="fade-in">I opened a chat with my AI assistant. And I started typing out her situation. Describing it. Analyzing it. Breaking it into components. Looking for patterns. Asking the model what I should do.</p>
+
+<!-- IMAGE 6: She was in the same room -->
+<div class="section-image">
+  <img src="img/06-same-room.jpg" alt="" loading="lazy">
+</div>
+
+<p class="fade-in"><strong class="blink-cursor">She was in the same room</strong></p>
+
+<p class="fade-in">Illich wrote about the Samaritan — a man sees someone suffering and stops. No institution, no protocol. Just one person in the room with another. Illich's fear was that we'd systematize that response until the impulse to stop disappears. I didn't stop. I opened a chat window.</p>
+
+<p class="fade-in">I don't know how to end this cleanly. I don't think I should.</p>
+</div>
+
+<div class="signoff">
+  <span class="snail">🐌</span>
+  <span class="credit">designed by ray, drafted with claude</span>
+</div>
+
+</article>
+
+<footer class="footer">
+  <div>
+    <a href="https://embassy.svit.la">404Embassy</a> □
+    <a href="https://svit.la">svit.la</a> □
+    <a href="https://x.com/ray_svitla">@ray_svitla</a>
+  </div>
+  <div>Lisbon, 2026</div>
+</footer>
+
+<script>
+// Intersection Observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.15,
+  rootMargin: '0px 0px -40px 0px'
+});
+
+// Observe all animated elements
+document.querySelectorAll('.fade-in, .section-image img, .pull, .redline, .final-section').forEach(el => {
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
