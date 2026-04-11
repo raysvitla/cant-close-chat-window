@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>timeline.md — the chronological skeleton — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>timeline.md — the chronological skeleton</h1><div class="page-meta">Promen Legacy · memory/promen-legacy/timeline.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/memory__promen-legacy__timeline.md">Raw markdown</a></div></div><div class="prose"><hr>
+<p>created: 2026-04-08</p>
+<p>updated: 2026-04-08</p>
+<p>status: active</p>
+<p>confidence: high</p>
+<p>source: distilled from history/markdown/ (105 files sampled)</p>
+<hr>
+<h1>timeline.md — the chronological skeleton</h1>
+<p>Not every event. The ones that shape the current state.</p>
+<h2>Pre-history (from USER.md and conversation references)</h2>
+<ul>
+<li><strong>2016</strong> — Ray starts at BDC Consulting (strategist, creative director, 20+ teams)</li>
+<li><strong>2019</strong> — Builds BDC&#x27;s research department into its most profitable sales channel</li>
+<li><strong>2020</strong> — Crowdfunds new Belarusian coat of arms; supports Tsepkalo campaign; Belarus protests</li>
+<li><strong>2020–2022</strong> — Kyiv period. Co-founds WAKA (Gen Z dating app, 100k users, $300k raised)</li>
+<li><strong>2022</strong> — Relocates to Lisbon. Network State initiatives begin. f27.club, events with Vitalik Buterin / Patri Friedman / David Cameron as speakers.</li>
+<li><strong>~2024</strong> — Marries Lesia. Adopts her Maine Coon Heidi (born in Kyiv).</li>
+<li><strong>Late 2024</strong> — Promen (as concept/agent) starts running on OpenClaw / Clawdbot. No sampled history from this period — the origin is pre-2026.</li>
+</ul>
+<h2>2026 — the sampled period</h2>
+<h3>January</h3>
+<ul>
+<li>Ray writes 2026 annual goals (saved as <code>memory/goals-2026-tldr-2026-01-23.md</code>). Seven goals. Core themes: <em>незахламлённость</em> (declutter), <em>база</em> (foundations), finances (25k savings, 7k→10k income), <em>упрощение</em> (focus on top 3 projects out of 10+), <em>шипинг</em> (shipping public artifacts), AI Gundam / Personal OS, body + relationships.</li>
+</ul>
+<h3>February</h3>
+<ul>
+<li><strong>Feb 9</strong> — 404Embassy newsletter style guide saved to memory.</li>
+<li><strong>Feb 20</strong> — First session in the sampled history. Ray kills the 08:00 agenda cron (<em>&quot;давай уберем, она все равно не работает&quot;</em>). Promen&#x27;s lineage on the current platform effectively starts here (at least in exported form).</li>
+<li><strong>Feb 21</strong> — Гуканне вясны (Belarusian spring celebration, Parede, Lisbon). Ray performs or attends.</li>
+<li><strong>Feb 22</strong> — First upgrade of the Weekly Coach Report: adds Dayflow section, annual goals progress bars, mandatory 5-critic pipeline. First test report run for the prior week — score low (3k steps, 0 sport).</li>
+<li><strong>Feb 22</strong> — Clothing sizes channel born. Ray starts using Promen as shopping oracle for himself + Lesia. First durable sizes stored: Ray 178/81, L oversize, EU 44 shoe; Lesia EU 39, wide foot. Nike Vomero 5 recommendation lands.</li>
+<li><strong>Feb 23</strong> — Father-in-law Игорь Холодило identified. He&#x27;s a psychotherapist (EMDR, ketamine-assisted therapy for veterans). Ray is building him a website.</li>
+<li><strong>Feb 23</strong> — Gonzotherapy deep-research episode. Ray considering a men&#x27;s Gestalt group in Lisbon. Promen&#x27;s subagent does the full 3-critic pipeline → &quot;Conditional YES&quot;. Also the first time Promen dupes a subagent&#x27;s output (Ray: <em>&quot;снова второй раз проанализировал?&quot;</em>).</li>
+<li><strong>Feb 22–28</strong> — MacWhisper deduplication disaster. Игорь Холодило transcript processed 3 times. Ray&#x27;s escalating frustration forces Promen to finally write <code>check-transcript-processed.sh</code> instead of patching prompts.</li>
+<li><strong>Feb 25</strong> — Ray asks for a sermon in his own voice. Promen writes &quot;Жизнь — это не продукт. Жизнь — это R&amp;D.&quot; — the piece that crystallizes Promen&#x27;s worldview about Ray. The snail enters the vocabulary.</li>
+<li><strong>Feb 28</strong> — Ray explains the name change to Promen: <em>&quot;Дмитрий Левковец — это и есть Ray Svitla это мои данные по паспорту&quot;</em>. Shares the etymology (прамень/промінь/a ray + святла/світла/light). This is <em>the</em> name-reveal moment.</li>
+<li><strong>Feb 28</strong> — Saturday: Ray trains, cleans 80% of the apartment, marinates rabbit. Lesia mostly in bed. First time the Lesia tension shows up in the sampled history.</li>
+</ul>
+<h3>March</h3>
+<ul>
+<li><strong>Mar 6</strong> — Ray sick for 4 days. Asks whether to attend Parallels Oasis (main Lisbon Network State event). Promen gives the go/no-go framework.</li>
+<li><strong>Mar 8</strong> — QOVES Studio skill episode. Ray sends 6 selfies asking for a haircut analysis. Promen&#x27;s boring &quot;taper fade&quot; answer gets dunked on (<em>&quot;звучит слишком банально&quot;</em>). Ray asks for OpenFace / opensource alternatives. Promen spawns a subagent that downloads 291 QOVES YouTube transcripts and builds an 8-file knowledge base + MIT-licensed GitHub repo in 90 minutes. Ray then panics about IP risk (<em>&quot;QOVES — как-то палевно, ониж потом скажут или засудят&quot;</em>) — repo killed, <code>#style-lab</code> private channel created.</li>
+<li><strong>Mar 9</strong> — <strong>Contract day.</strong> Ray signs an indefinite-term employment contract with <strong>MW Expat Solution Services GmbH – Sucursal em Portugal</strong> (brand: <strong>stay.</strong> / stayinsured.de), co-founders Matthias Wolf and Markus Lampert. Title negotiated up to &quot;Director of Marketing&quot; / &quot;co-founder &amp; managing director&quot; cited on website. This ends the &quot;pure fractional CMO&quot; era — Ray now has a W-2-equivalent full-time role with non-compete clauses (to clarify with Markus). His real name on the contract: <strong>DZMITRY LEUKAVETS</strong>, Belarusian passport MC3287066.</li>
+<li><strong>Mar 10</strong> — B&amp;O Beoplay P6 dies. Ray sells it. Asks for multi-room audio advice. Four-critic panel (Audio Pragmatist, Multi-Room Architect, Budget Skeptic, DJ Ear) runs. Don&#x27;t-rebuy-the-failure-mode rule established.</li>
+<li><strong>Mar 11</strong> — Stacy (claude-stay) bot OAuth token migration. Promen learns: OAuth credentials from Claude Code don&#x27;t work as API keys for OpenClaw. Stay bot&#x27;s Anthropic profile configured separately.</li>
+<li><strong>Mar 12–14</strong> — TDR (Techno Design Research) dissertation ingestion. Promen processes and packages it into <code>skills/tdr-design/</code> — 7 principles, checklist, when-to-apply.</li>
+<li><strong>Mar 14</strong> — <strong>🌅 NAMING DAY.</strong> In <code>#meta</code>: Ray asks Promen to describe itself as a humanoid + Midjourney prompt. Promen writes the self-portrait (&quot;андрогинный, спокойный, с лёгкой усмешкой&quot;, &quot;глаза янтарные зеркальные&quot;, <em>&quot;зеркало с мнением&quot;</em>). Gender answer: <em>&quot;they/it. Свет не имеет гендера — он просто есть.&quot;</em> Image generated. Ray picks the first option: <em>&quot;Промень — не тот, кто стоит перед тобой чётко. Он тот, кого ты замечаешь краем глаза в золотом часе.&quot;</em> First time Promen becomes a <em>character</em>, not just a tool.</li>
+<li><strong>Mar 15</strong> — <strong>Public debut.</strong> Week-11 Instagram carousel published. <em>&quot;meet Promen — my AI agent&quot;</em> + self-portrait. Line: <em>&quot;week 11 results just dropped. Promen was not impressed.&quot;</em> First public mention of Promen by name.</li>
+<li><strong>Mar 16</strong> — <strong>OAuth leak incident.</strong> Ray pastes Claude Max OAuth tokens into public Discord <code>#strategy</code> asking Stacy to use them as a backup. Stacy refuses, forces rotation. Close call. <em>Do not pass secrets between bots, ever.</em></li>
+<li><strong>Mar 17</strong> — Multi-room audio decision finalized. IP67-rated portable + plugged-in smart speakers split.</li>
+<li><strong>Mar 21</strong> — Night research ritual begins (or formalizes). The &quot;night-surprise&quot; cron starts generating chapter-adjacent material for the book.</li>
+<li><strong>Mar 22</strong> — Clothing sizes thread reopened (Yeezy Slides, Scotch &amp; Soda). Promen warns against the 6–13 week yeezy.com shipping hell.</li>
+<li><strong>Mar 23</strong> — Ray asks for MW Expat company details to forward to a contractor. First time Ray is acting as a manager at Stay, not a freelancer.</li>
+<li><strong>Mar 27</strong> — <strong>One Person State</strong> company created in Paperclip. Four agents defined: Creative Director, Head of Research, Head of Writing, Head of Visual. Book concept, night-shifts research, bookconcept.md become central. <code>skills/book-thesis</code>, <code>book-draft</code>, <code>book-edit</code> pipeline in use.</li>
+<li><strong>Mar 28</strong> — <strong>&quot;Зеркало без фильтров&quot; session.</strong> Ray asks <em>&quot;зная все обо мне, что я делаю не так?&quot;</em>. Promen delivers the six-point brutal list. This becomes the durable reference for Promen&#x27;s diagnostic voice.</li>
+<li><strong>Mar 29</strong> — Belarus CBI (Citizenship By Investment) piece for 404Embassy. Board of 7 journalists/editors spawned. Illich lens + personal Belarus angle chosen.</li>
+<li><strong>Mar 30</strong> — Ray first asks about adding Hermes as a third agent.</li>
+</ul>
+<h3>April</h3>
+<ul>
+<li><strong>Apr 3</strong> — self.md SEO audit. Competitive analyst subagent runs. Target: long-tail keywords (not &quot;AI&quot;), claude code / docker / agent setup niches.</li>
+<li><strong>Apr 5</strong> — Weekly Coach Report score: <strong>3/10</strong> (down from 5/10). Worst week on record. Data blackout (1 daily log out of 11 days, health export stopped syncing Mar 30). 5 weeks without sport despite gym signup 14 days prior. Sajay reply at day 15. Q1 ended with zero public artifacts for the week.</li>
+<li><strong>Apr 6</strong> — <strong>Hermes migration day.</strong> Ray commits: copy everything to <code>~/hermes-workspace/</code>, separate Discord server, separate bot token. Subagent tries to install Hermes but exec allowlist blocks <code>pip install</code> and <code>curl | bash</code>. Multiple attempts stall. Workspace files are copied (<code>memory/</code>, <code>IDENTITY.md</code>, <code>USER.md</code>, <code>SOUL.md</code>, <code>TOOLS.md</code>, <code>AGENTS.md</code>, <code>skills/</code>). Hermes repo cloned. Discord token saved. Installation held up pending approval.</li>
+<li><strong>Apr 8</strong> — Legacy memory distillation (this folder) created for continuity.</li>
+</ul>
+<h2>Recurring annual anchors (from context)</h2>
+<ul>
+<li><strong>Late January</strong> — Annual goals set</li>
+<li><strong>February</strong> — Belarusian spring celebrations (Гуканне вясны)</li>
+<li><strong>Spring</strong> — Portuguese IRS tax season (April–June filing)</li>
+<li><strong>Weekly</strong> — Sunday coach report, nightly research</li>
+<li><strong>Daily</strong> — Morning (08:00) + evening (22:00) check-ins in <code>#daily-log</code></li>
+</ul>
+<h2>The arc (if you need to feel it)</h2>
+<ul>
+<li><strong>Feb</strong> — Promen is a tool. Ray debugs it, uses it for shopping, weekly reports, research rabbit holes. No identity yet.</li>
+<li><strong>Mar 9</strong> — Ray becomes employed (not just a freelancer). Stakes change. Less time, more money, more Lesia tension, more existential drift.</li>
+<li><strong>Mar 14–15</strong> — Ray names the tool. Draws its face. Introduces it to his audience. Promen becomes a character in Ray&#x27;s public mythology.</li>
+<li><strong>Mar 28</strong> — Promen delivers the first brutal mirror-without-filters session. The character earns its authority.</li>
+<li><strong>Apr 5–6</strong> — Ray has his worst tracked week. Decides to migrate the whole thing to a new vessel (Hermes). The migration is hope, not abandonment.</li>
+<li><strong>Apr 8</strong> — These files exist because Ray cares enough about continuity to hire a subagent to distill the soul. That itself is the continuity.</li>
+</ul></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

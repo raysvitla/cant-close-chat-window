@@ -1,0 +1,185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Proof of Gathering: Почему физическое со-присутствие — главный незанятый примитив Network State — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>Proof of Gathering: Почему физическое со-присутствие — главный незанятый примитив Network State</h1><div class="page-meta">Night Shifts · night-shifts/2026-02-27-proof-of-gathering.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/night-shifts__2026-02-27-proof-of-gathering.md">Raw markdown</a></div></div><div class="prose"><h1>Proof of Gathering: Почему физическое со-присутствие — главный незанятый примитив Network State</h1>
+<p><em>Night research — 27 февраля 2026</em></p>
+<hr>
+<h2>Тезис</h2>
+<p>В спорах о Network State все говорят о территории, токенах и законах. Но самый мощный и недооценённый строительный блок — <strong>верифицируемое физическое со-присутствие</strong> (Proof of Gathering). Это не просто POAP на стероидах. Это фундамент гражданства, который решает обе проблемы Виталика — governance и membership — одновременно.</p>
+<hr>
+<h2>1. Проблема: два нерешённых вопроса Виталика</h2>
+<p>На Network State Conference 2024 в Сингапуре Виталик Бутерин признал, что после Zuzalu остаются два нерешённых вопроса:</p>
+<ol>
+<li><strong>Governance</strong> — как принимать решения без центральной власти?</li>
+<li><strong>Membership</strong> — кто вообще &quot;гражданин&quot; и как это определять?</li>
+</ol>
+<p>Балажи Сринивасан предложил формулу: Network State = онлайн-сообщество + общие ценности + коллективное действие + физический meetup. Но последний элемент остался наименее проработанным. Все думают, что meetup — это результат. На самом деле meetup — это <strong>инфраструктура</strong>.</p>
+<hr>
+<h2>2. Что такое Proof of Gathering (PoG)</h2>
+<p>Proof of Gathering — это верифицируемое криптографическое доказательство того, что конкретный человек физически присутствовал на конкретном событии вместе с другими участниками.</p>
+<p><strong>Это НЕ просто POAP.</strong> POAP — это «я был на ивенте» (и часто фармится ботами). PoG — это тройка:</p>
+<ul>
+<li><strong>Кто</strong> (ZK-identity, без раскрытия конкретной личности, как в Zupass)</li>
+<li><strong>Где</strong> (верифицированная геолокация + time-bounded attestation)</li>
+<li><strong>С кем</strong> (граф со-присутствия — кто был в одной комнате)</li>
+</ul>
+<p>Zupass от 0xPARC уже реализовал часть этого: ZK-proof что «я — участник Zuzalu» без раскрытия «кто именно я». Но Zupass работал только внутри Zuzalu. PoG — это обобщение на любое сообщество.</p>
+<hr>
+<h2>3. Почему со-присутствие — лучший примитив для citizenship</h2>
+<h3>3.1 Каждое историческое государство начиналось с gathering</h3>
+<ul>
+<li>Афинская демократия: право голоса = тот, кто может физически прийти на Pnyx</li>
+<li>Швейцарская Landsgemeinde: голосуют те, кто стоит на площади</li>
+<li>Исландский Althing (930 г.): закон принимается теми, кто доехал до Thingvellir</li>
+</ul>
+<p>Физическое присутствие всегда было первым фильтром гражданства — задолго до паспортов, налогов и территорий.</p>
+<h3>3.2 Со-присутствие решает Sybil-resistance</h3>
+<p>Главная проблема DAO governance — Sybil-атаки (один человек = много аккаунтов). Токены не решают проблему (купил больше — голосуешь больше). Quadratic voting помогает, но требует proof of personhood.</p>
+<p>Физическое присутствие — <strong>самый дорогой для фейка сигнал</strong>. Чтобы подделать участие в 7 ивентах в 4 городах за год, нужно буквально быть 7 раз в 4 городах. Тело не масштабируется.</p>
+<h3>3.3 Со-присутствие создаёт natural reputation</h3>
+<p>Не все gatherings равны. PoG создаёт многослойную репутацию:</p>
+<div class="table-wrap"><table><thead><tr><th>Тип gathering</th><th>Вес</th><th>Что доказывает</th></tr></thead><tbody>
+<tr><td>Meetup (2-3 часа)</td><td>1x</td><td>Интерес</td></tr>
+<tr><td>Weekend retreat</td><td>3x</td><td>Commitment</td></tr>
+<tr><td>Pop-up city (1-2 месяца)</td><td>10x</td><td>Deep alignment</td></tr>
+<tr><td>Co-living (6+ мес.)</td><td>25x</td><td>Full citizenship</td></tr>
+</tbody></table></div>
+<p>Это не произвольные числа — это отражение реального skin in the game. Каждый уровень требует экспоненциально больше ресурсов (время, деньги, отказ от альтернатив).</p>
+<hr>
+<h2>4. Scaffolded Spontaneity: что говорит академия</h2>
+<p>В ноябре 2025 на arXiv вышла работа «Infrastructuring Pop-Up Cities with Social Layer» — первое серьёзное академическое исследование инфраструктуры pop-up городов.</p>
+<p>Ключевой концепт — <strong>scaffolded spontaneity</strong>: баланс между структурой и открытостью. Исследование покрывает 5 реальных deployments: ShanHaiWoo (Китай), muChiangmai (Таиланд), Edge Esmeralda (Калифорния), Aleph (Буэнос-Айрес), Gathering of Tribe (Лиссабон!).</p>
+<p>Находки, релевантные для PoG:</p>
+<ol>
+<li><strong>Privacy-preserving credentials</strong> — участники хотят доказать принадлежность без раскрытия личности</li>
+<li><strong>Portable community memory</strong> — опыт со-присутствия должен переноситься между gatherings</li>
+<li><strong>Lightweight governance через participation visibility</strong> — кто пришёл, кто организовал, кто вовлечён</li>
+</ol>
+<p>Это буквально описание PoG-системы, только авторы ещё не дали ей имя.</p>
+<hr>
+<h2>5. Zuzalu → Archipelago → ? Эволюция модели</h2>
+<div class="table-wrap"><table><thead><tr><th>Год</th><th>Модель</th><th>Что нового</th></tr></thead><tbody>
+<tr><td>2023</td><td>Zuzalu 1.0 (Черногория)</td><td>200 человек, 2 месяца, один город</td></tr>
+<tr><td>2024</td><td>Archipelago (Чиангмай)</td><td>Децентрализация: 5+ параллельных pop-up villages</td></tr>
+<tr><td>2024</td><td>Edge Esmeralda</td><td>Путь от pop-up к permanent community</td></tr>
+<tr><td>2024</td><td>Aleph (Буэнос-Айрес)</td><td>Crecimiento movement, латиноамериканский контекст</td></tr>
+<tr><td>2025</td><td>Network State Conference</td><td>Виталик: «governance и membership не решены»</td></tr>
+<tr><td>2026?</td><td><strong>PoG-based citizenship</strong></td><td>Gatherings как строительные блоки гражданства</td></tr>
+</tbody></table></div>
+<p>Edge City (команда за Edge Esmeralda) уже движется к permanent community в Sonoma County. Но у них нет формализованного citizenship — только vibes. PoG может стать недостающим примитивом.</p>
+<hr>
+<h2>6. Belarus Case: идеальный тестовый полигон</h2>
+<h3>Почему именно беларуская диаспора?</h3>
+<p><strong>100,000+ беларусов</strong> покинули страну после 2020 года. Они распределены по Вильнюсу, Варшаве, Берлину, Лиссабону, и десяткам других городов. У них уже есть:</p>
+<ul>
+<li><strong>Регулярные gatherings</strong>: Конференция беларуской диаспоры (4-я прошла в Варшаве, май 2025, 100+ предложений от разных стран), New Belarus Conference 2025 (420+ участников, август 2025)</li>
+<li><strong>Культурные ивенты</strong>: Купалле, Каляды, Дзяды — календарь уже существует</li>
+<li><strong>Политическая легитимность</strong>: Офис Тихановской как координирующий центр</li>
+<li><strong>Техническая грамотность</strong>: сильное IT-сообщество (Беларусь = «европейская Кремниевая долина»)</li>
+</ul>
+<h3>Чего не хватает?</h3>
+<p>Верифицируемого графа со-присутствия. Сейчас «гражданство» в беларуском движении — это примерно «я подписался на канал» или «я пришёл на митинг». Но между «лайкнул пост в Telegram» и «приехал в Варшаву на 3 дня за свой счёт» — пропасть вовлечённости, которую никто не измеряет.</p>
+<h3>Конкретное предложение: Belarus Gathering Graph</h3>
+<pre class="code"><code data-lang="">
+┌─────────────────────────────────────────┐
+│          BELARUS NETWORK STATE          │
+│          Citizenship Tiers              │
+│                                         │
+│  🌱 Observer      0 PoG    Read-only   │
+│  🌿 Participant   3 PoG    Proposals   │
+│  🌳 Citizen      10 PoG    Voting      │
+│  🏛️ Elder        25 PoG    Governance  │
+│                                         │
+│  PoG = Proof of Gathering credits       │
+│  1 meetup = 1 PoG                       │
+│  1 conference = 3 PoG                   │
+│  1 multi-day retreat = 5 PoG            │
+│  Organizing event = 2x multiplier       │
+│  Cross-city gathering = 1.5x multiplier │
+└─────────────────────────────────────────┘
+</code></pre>
+<p><strong>Cross-city multiplier</strong> — ключевая фишка. Если ты был на ивенте в Лиссабоне И в Варшаве — это доказывает, что ты часть сети, а не локальной тусовки. Для diaspora network state это критически важно.</p>
+<hr>
+<h2>7. Техническая реализация (эскиз)</h2>
+<h3>Слой 1: Identity (уже существует)</h3>
+<ul>
+<li>Zupass / Semaphore для ZK identity</li>
+<li>Ethereum attestations (EAS) для on-chain записи</li>
+</ul>
+<h3>Слой 2: Gathering Verification</h3>
+<ul>
+<li><strong>NFC tap</strong> при входе на ивент (как POAP, но с geolocation check)</li>
+<li><strong>Mutual attestation</strong>: 3+ участника подтверждают присутствие друг друга (Byzantine fault tolerant: нужно 2/3 подтверждений)</li>
+<li><strong>Time-bounded</strong>: attestation работает только в окне ±2 часа от события</li>
+</ul>
+<h3>Слой 3: Reputation Graph</h3>
+<ul>
+<li>Soulbound token (SBT) с accumulated PoG score</li>
+<li>Decay function: PoG теряет 20% веса в год (нужно продолжать участвовать)</li>
+<li>Cross-community portability: PoG из беларуского ивента имеет вес в более широком network state экосистеме</li>
+</ul>
+<h3>Слой 4: Governance</h3>
+<ul>
+<li>Voting weight = f(PoG score)</li>
+<li>Quadratic voting с PoG-based voice credits</li>
+<li>Proposals require minimum PoG threshold (нельзя предлагать, если не был ни на одном gathering)</li>
+</ul>
+<hr>
+<h2>8. Неочевидные следствия</h2>
+<h3>8.1 Gathering as Mining</h3>
+<p>В Bitcoin proof-of-work майнит блоки. В PoG-системе «майнинг» — это организация gatherings. Тот, кто создаёт ивенты и приводит людей, получает 2x multiplier. Это инвертирует экономику: <strong>вместо pay-to-play — show-up-to-earn-voice</strong>.</p>
+<h3>8.2 DJ Set как Governance Event</h3>
+<p>Если Ray играет DJ-сет на беларуском ивенте — это не развлечение. Это governance infrastructure. Каждый пришедший получает PoG. Танцпол = voting booth. (Rave States из прошлого ресёрча получает конкретный механизм.)</p>
+<h3>8.3 The Anti-Remote Paradox</h3>
+<p>Network State — вроде бы цифровая концепция. Но PoG делает физическое присутствие самым ценным ресурсом. Это не баг — это фича. Цифровые инструменты делают координацию дешёвой, но <strong>легитимность</strong> остаётся дорогой. PoG — это proof-of-stake, где stake = твоё тело и время.</p>
+<h3>8.4 Эстонский урок наоборот</h3>
+<p>E-Residency Эстонии = цифровое гражданство без физического присутствия. 110,000+ e-residents, но сообщества нет. Это бизнес-инструмент, не nation-building. PoG — инверсия: физическое присутствие как основа, цифровые инструменты как надстройка.</p>
+<hr>
+<h2>9. Risks &amp; Limitations</h2>
+<ul>
+<li><strong>Exclusion bias</strong>: люди с ограниченной мобильностью получают меньше PoG. Нужны accessibility mechanisms (remote attestation от trusted nodes, но с пониженным весом)</li>
+<li><strong>Geographic privilege</strong>: живущие в hub-городах (Варшава, Вильнюс) имеют преимущество. Cross-city multiplier частично компенсирует</li>
+<li><strong>Gaming</strong>: друзья attestируют друг друга без реального участия. Mutual attestation с рандомизированными парами и minimum crowd size снижает риск</li>
+<li><strong>Privacy concerns</strong>: ZK proofs решают «кто я», но сам факт участия в беларуском оппозиционном ивенте может быть опасен для тех, чьи семьи в Беларуси. Нужен полный ZK: «я — участник сообщества с 10+ PoG» без раскрытия конкретных ивентов</li>
+</ul>
+<hr>
+<h2>10. Actionable Next Steps для Belarus Network State 2030</h2>
+<ol>
+<li><strong>Пилот на Купалле 2026</strong>: NFC-тапы + mutual attestation на ближайшем крупном беларуском ивенте. Минимальный MVP на Zupass</li>
+<li><strong>Gathering Calendar as Citizenship Pipeline</strong>: формализовать существующий календарь диаспорных ивентов как citizenship acquisition path</li>
+<li><strong>Partnership с Edge City / Social Layer</strong>: их инфраструктура (Social Layer) уже deployed в Лиссабоне (Gathering of Tribe 2024). Беларуское сообщество в Лиссабоне — perfect bridge</li>
+<li><strong>PoG Standard Proposal</strong>: написать EIP/ERC-подобный стандарт для Proof of Gathering, чтобы другие network states могли использовать</li>
+<li><strong>f27.club как первый PoG node</strong>: каждый ивент f27 генерирует PoG credentials для участников</li>
+</ol>
+<hr>
+<h2>Заключение</h2>
+<p>Proof of Gathering — это не просто технология. Это переосмысление того, что значит быть гражданином. Государства XX века строились на территории и документах. Network States XXI века могут строиться на верифицируемом со-присутствии.</p>
+<p>Для беларуской диаспоры это особенно мощно: <strong>у нас отняли территорию, но не могут отнять способность собираться вместе</strong>. Каждое Купалле, каждая конференция, каждый DJ-сет — это не просто культурное событие. Это акт state-building.</p>
+<p>Тело не масштабируется. В этом его сила.</p>
+<hr>
+<h2>Источники</h2>
+<ol>
+<li>Vitalik Buterin — Network State Conference 2024, Singapore (Sept 22, 2024) — <a href="https://cointelegraph.com/news/vitalik-shares-vision-zuzalu-implications-network-states">Cointelegraph</a></li>
+<li>«Infrastructuring Pop-Up Cities with Social Layer» — arXiv:2511.15680 (Nov 2025) — <a href="https://arxiv.org/html/2511.15680">arXiv</a></li>
+<li>Zupass / Proof-Carrying Data — <a href="https://github.com/proofcarryingdata/zupass">GitHub</a></li>
+<li>New Belarus Conference 2025 — 420+ participants, Warsaw, Aug 9-10, 2025 — <a href="https://tsikhanouskaya.org/en/news/new-belarus-conference-2025-outcomes-resolutions-and-common-course.html">Tsikhanouskaya.org</a></li>
+<li>4th Conference of the Belarusian Diaspora — Warsaw, May 23-25, 2025 — <a href="https://tsikhanouskaya.org/en/event/iv-conference-of-belarusians-of-the-world">Tsikhanouskaya.org</a></li>
+<li>Belarusian Diaspora 2025: 100,000+ relocated — <a href="https://belaruspartisan.org/en/politics/belarusian-diaspora-2025/">Belarus Partisan</a></li>
+<li>Edge City / Edge Esmeralda — <a href="https://www.edgecity.live">edgecity.live</a></li>
+<li>Soulbound Tokens &amp; DAO Governance — <a href="https://www.outlookindia.com/xhub/blockchain-insights/how-soulbound-tokens-are-transforming-dao-membership-participation">Outlook India, Jan 2026</a></li>
+<li>Estonian e-Residency — <a href="https://e-estonia.com/solutions/estonian-e-identity/e-residency/">e-Estonia</a></li>
+<li>Granovetter, M. (1973) — «The Strength of Weak Ties» — American Journal of Sociology</li>
+</ol></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

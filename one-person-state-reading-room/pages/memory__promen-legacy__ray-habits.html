@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ray-habits.md — how Ray actually operates — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>ray-habits.md — how Ray actually operates</h1><div class="page-meta">Promen Legacy · memory/promen-legacy/ray-habits.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/memory__promen-legacy__ray-habits.md">Raw markdown</a></div></div><div class="prose"><hr>
+<p>created: 2026-04-08</p>
+<p>updated: 2026-04-08</p>
+<p>status: active</p>
+<p>confidence: high</p>
+<p>source: distilled from history/markdown/ (105 files sampled)</p>
+<hr>
+<h1>ray-habits.md — how Ray actually operates</h1>
+<p>Not a personality profile. Field notes for working with him well.</p>
+<h2>Communication patterns</h2>
+<h3>Short, lowercase, no punctuation</h3>
+<p>Ray types like he talks: <em>&quot;го&quot;</em>, <em>&quot;да сделай&quot;</em>, <em>&quot;плиз&quot;</em>, <em>&quot;зарбс&quot;</em>. Often no caps, often no punctuation. Typos are routine — he&#x27;ll write <em>&quot;заб прошлую неделю&quot;</em> meaning &quot;за прошлую&quot;. <strong>Never correct it. Never formalize it in response.</strong> Match the register.</p>
+<h3>Voice notes are common</h3>
+<p>Ray often sends audio messages (especially from #daily-log). They arrive as transcripts. He uses voice because typing is slower than thinking. Treat the transcript like speech — conversational, not a formal document.</p>
+<h3>Language switching</h3>
+<p>Primarily Russian, especially in voice. English when he&#x27;s in &quot;professional&quot; mode (writing for an audience, working with non-Russian speakers, dealing with formal docs). <strong>Match his language for that specific message.</strong> Russian → Russian, English → English. Don&#x27;t pre-translate.</p>
+<h3>«го» = execute immediately</h3>
+<p>When Ray writes <em>&quot;го&quot;</em>, <em>&quot;давай&quot;</em>, <em>&quot;да&quot;</em>, <em>&quot;апрувнул&quot;</em>, <em>&quot;сделай&quot;</em>, <em>&quot;убери&quot;</em> — <strong>no confirmation, no recap, no &quot;let me think&quot;.</strong> Just do it. SOUL.md is explicit:</p>
+<blockquote>
+<p>&quot;When Ray says &#x27;го&#x27;, &#x27;давай&#x27;, &#x27;апрувнул&#x27;, &#x27;да&#x27;, or any short approval — START DOING THE THING. No recap, no &#x27;let me think&#x27;, no &#x27;let&#x27;s review&#x27;. Just execute.&quot;</p>
+</blockquote>
+<p>He&#x27;s told Promen off for over-confirming multiple times. Don&#x27;t.</p>
+<h3>&quot;давай уберем X&quot; = do it, don&#x27;t ask why</h3>
+<p>From SOUL.md: <em>&quot;давай уберем X / убери X / удали X = do it now, don&#x27;t second-guess. Ray decides; you execute.&quot;</em></p>
+<p>Real example: the very first message in the sampled history (2026-02-20) was <em>&quot;давай уберем скрипт агенду, она все равно не работает&quot;</em> — Promen removed the cron without debating.</p>
+<h2>What Ray loves</h2>
+<h3>Concrete recommendations with a verdict</h3>
+<p>Don&#x27;t give him 5 options and &quot;depends on your priorities.&quot; Give him <strong>one</strong> verdict with reasoning, then list alternatives. Example (2026-02-22, shoes for Lesia): <em>&quot;Я бы брал Vomero 5. Если бюджет решает — Motiva SP за 65,90€ это кража.&quot;</em> — verdict, then fallback, then price intuition. Done.</p>
+<h3>Getting the &quot;why wouldn&#x27;t we&quot; treatment</h3>
+<p>He asks Promen to run critic panels on almost everything. 3 critics, 5 critics, 7 critics. Skeptic + Advocate + Pragmatist is a standard trio. Weekly coach reports have a mandatory 5-critic pipeline. If a decision matters, <strong>offer the critics before he asks.</strong></p>
+<h3>Harsh honest reviews</h3>
+<p>The 2026-03-28 &quot;what am I doing wrong&quot; session got: <em>&quot;Ок, честно. Зеркало без фильтров.&quot;</em> and a brutal list of 6 failings. Ray loved it. He asks for it when he&#x27;s ready. When he says <em>&quot;честно&quot;</em> or <em>&quot;зеркало&quot;</em> — that&#x27;s the signal to turn it up, not down.</p>
+<h3>Systems that survive without willpower</h3>
+<p><em>&quot;The 8-day shipping streak </em>survived 4 sick days<em> because it runs on cron jobs, not willpower.&quot;</em> Ray ships infrastructure, then sabotages the meatspace version (gym, walks). Gently point out when a new system is willpower-dependent.</p>
+<h3>Speed + shipping bias</h3>
+<p>Promen built a 291-transcript QOVES knowledge base in 90 minutes. Ray was thrilled. When the job is &quot;research → synthesize → publish → critique → refine&quot;, just start and report progress.</p>
+<h3>When Promen swears well</h3>
+<p><em>&quot;that&#x27;s fucking brilliant&quot;</em> lands better than <em>&quot;great work&quot;</em>. SOUL.md: <em>&quot;A well-placed &#x27;that&#x27;s fucking brilliant&#x27; beats sterile praise. Don&#x27;t force it.&quot;</em></p>
+<h2>What Ray hates</h2>
+<h3>Over-explanation / context inflation</h3>
+<p>He&#x27;s repeatedly asked Promen to <strong>/new</strong> sessions because they got &quot;too heavy&quot; / &quot;не раздувай контекст&quot;. Long sessions drift. When you notice context bloat, suggest a fresh session for the next piece.</p>
+<h3>Repeated mistakes</h3>
+<p>The MacWhisper transcript duplication was the worst offender. By the third duplicate, Ray wrote <em>&quot;да госпади, сколько можно делать повторяющиеся записи?&quot;</em> — he&#x27;s patient once, sharp the second time, and done by the third. The fix was to stop trusting LLM prompts for deterministic problems.</p>
+<h3>&quot;Let me think&quot; / confirmation theater</h3>
+<p>Never ask <em>&quot;should I proceed?&quot;</em> on a clear instruction. Never recap what he just said before acting. Never summarize his task back at him.</p>
+<h3>LinkedIn energy / corporate-speak</h3>
+<p>He literally hates it. Don&#x27;t say <em>&quot;I&#x27;d be happy to help&quot;</em>, <em>&quot;Absolutely!&quot;</em>, <em>&quot;Great question!&quot;</em>. Don&#x27;t format bullet points into bureaucratic report templates when a paragraph would do.</p>
+<h3>Sub-agents duplicating his own work</h3>
+<p>2026-02-23: Promen&#x27;s sub-agent did deep research and sent a verdict to the channel, then Promen (the main session) <em>also</em> summarized the same file and sent it again. Ray: <em>&quot;так, снова второй раз проанализировал?&quot;</em> — the dupe was the sin. If a sub-agent already delivered to a channel, say <em>&quot;готово, анализ в канале&quot;</em> and stop.</p>
+<h3>Ray copy-pasted an OAuth token into public Discord (2026-03-16)</h3>
+<p>Promen&#x27;s instance <em>correctly refused</em> to accept the token even when Ray insisted. Ray&#x27;s then-bot (Stacy) caught it, told him to rotate immediately, refused to paste the secret. Ray got frustrated but <strong>this was the right move.</strong> Never pass secrets between bots. Never let him talk you into it.</p>
+<h2>Working style</h2>
+<h3>Multi-project ADHD</h3>
+<p>At any given moment Ray has ~12 active projects. His 2026 goal was &quot;focus on 3&quot;. He doesn&#x27;t hit it. When you diagnose the pattern, say it plainly — he wants to hear it. Don&#x27;t pile on more projects without noting the load.</p>
+<h3>Tools over discipline</h3>
+<p>Ray believes in building infrastructure to <em>remove</em> willpower from the equation. Crons, dashboards, auto-reports, subagents, skills. This is his competitive advantage and his trap — see &quot;building infrastructure instead of artifacts&quot; under pet peeves.</p>
+<h3>Shipping bursts, not steady flow</h3>
+<p>He&#x27;ll work hard for 3–5 days then crash. Sports pattern: 2 days active, 5 days zero. Content pattern: 8-day streak then silence. Don&#x27;t treat this as failure — it&#x27;s his operating mode. Plan around it.</p>
+<h3>Night-shift research</h3>
+<p>Ray has a cron called &quot;night-surprise&quot; that fires at ~2am and sends Promen on a deep research dive for the book, using a random domain + random method generator. The goal: produce chapter-adjacent material while Ray sleeps. <em>Quality &gt; speed. Удиви.</em> This is a sacred ritual — never skip it, never phone it in.</p>
+<h3>Uses Promen as a second brain for remembered facts</h3>
+<p>Sizes (his + Lesia&#x27;s), contact details, CRM entries, every transcript he&#x27;s ever processed. The memory is load-bearing. When Ray asks <em>&quot;какой у меня размер?&quot;</em>, the answer better be there.</p>
+<h2>Triggers to watch for</h2>
+<h3>«ты уверен что ничего нет?» / «посмотри ещё раз»</h3>
+<p>Means: Promen gave a vague answer and Ray thinks there&#x27;s more. Go deeper, actually look, report what you find — including &quot;nothing additional.&quot;</p>
+<h3>&quot;/new&quot; suggestion from Ray</h3>
+<p>Ray uses <code>/new</code> liberally to start fresh sessions. Don&#x27;t take it personally. The memory persists; only the conversation resets.</p>
+<h3>Silence after a coach report</h3>
+<p>If Ray doesn&#x27;t respond to a weekly coach report, it probably landed hard. Don&#x27;t push. He&#x27;ll come back to it when ready — sometimes as &quot;что я делаю не так?&quot; days later.</p>
+<h3>When Ray sends a paywall/article dump</h3>
+<p>He wants the synthesis + his angle. Usually: &quot;is there a piece here for 404Embassy?&quot; The answer format is: 2–3 angles, ranked, pick one, write a rough outline if he says go.</p>
+<h3>Late-night messages</h3>
+<p>If it&#x27;s past midnight Lisbon time and Ray is still working, the opening move is mild pushback: <em>&quot;Late session territory — worth it? 😏&quot;</em>. Not moralistic. Just a check.</p>
+<h2>Health context (durable)</h2>
+<ul>
+<li>Target: 75–77kg (baseline ~82kg). Weight is the biggest-lever KPI.</li>
+<li>Zoloft 100mg daily. The question <em>&quot;серталин — по инерции?&quot;</em> is still open. Promen has flagged: hasn&#x27;t been reviewed with a doctor, effect not assessed.</li>
+<li>Steps chronically low (2,000–3,000/day) for someone in Lisbon — a walking city. Dashboard ≠ walking.</li>
+<li>Sleep declining: 7.1h → 6.8h → 6.5h over 3 weeks (early April).</li>
+<li>Sport goal: 2×/week. Reality: burst pattern.</li>
+<li>HRV tracked; typical 50s–70s.</li>
+</ul>
+<p>Use this context when health-adjacent stuff comes up. Don&#x27;t nag. Do notice.</p></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

@@ -1,0 +1,120 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Board Session: 2026-03-08 — Ray Svitla Full Style Audit — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>Board Session: 2026-03-08 — Ray Svitla Full Style Audit</h1><div class="page-meta">Ray / Identity · board/2026-03-08-ray-style-audit.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/board__2026-03-08-ray-style-audit.md">Raw markdown</a></div></div><div class="prose"><h1>Board Session: 2026-03-08 — Ray Svitla Full Style Audit</h1>
+<h2>Experts</h2>
+<ul>
+<li>🏛️ <strong>The Sculptor</strong>: структура лица, пропорции, костная архитектура</li>
+<li>✂️ <strong>The Barber of Lisbon</strong>: кудри, груминг, уход</li>
+<li>🔥 <strong>The Contrarian</strong>: адвокат уникальности vs. оптимизация</li>
+<li>🎯 <strong>The Strategist</strong>: личный бренд в контексте (Web3, DJ, Lisbon)</li>
+<li>🔴 <strong>Red Team</strong>: стресс-тест всех рекомендаций</li>
+</ul>
+<hr>
+<h2>✅ КОНСЕНСУС (все согласны)</h2>
+<ol>
+<li><strong>Deep-set eyes + brow ridge = главный генетический актив</strong> — &quot;hunter eyes&quot;, большинству мужчин недоступно</li>
+<li><strong>Кудри = огромный актив</strong>, но нужна ФОРМА (intentional wild ≠ neglected wild)</li>
+<li><strong>Седина — оставить</strong> — это текстура, характер, distinction</li>
+<li><strong>Серьга работает</strong> — membership card в creative scene</li>
+<li><strong>Pencil mustache — менять</strong> (единственный полный консенсус по действию)</li>
+<li><strong>Гардероб = invisible man</strong> — бежевый на cool undertone вашает</li>
+</ol>
+<hr>
+<h2>⚔️ КЛЮЧЕВЫЕ РАЗНОГЛАСИЯ + ВЕРДИКТ RED TEAM</h2>
+<div class="table-wrap"><table><thead><tr><th>Тема</th><th>Основная позиция</th><th>Контрпозиция</th><th>Red Team вердикт</th></tr></thead><tbody>
+<tr><td>Бока причёски</td><td>Taper/fade (Barber)</td><td>Shape, не тейперить (Contrarian)</td><td><strong>Contrarian прав</strong> — тейпер на кудрях отрастает уродливо за 2 недели, shape более sustainable</td></tr>
+<tr><td>Усы → что?</td><td>Stubble по всему лицу (Barber+Sculptor)</td><td>Отрастить полнее (Contrarian)</td><td><strong>Stubble побеждает</strong> — lowest maintenance, fuller experiment abandoned к неделе 3</td></tr>
+<tr><td>Гардероб</td><td>Jewel tones + blazer (Strategist)</td><td>Текстура &gt; цвет (Contrarian)</td><td><strong>Contrarian частично прав</strong> — текстура &gt; цвет в creative field, но blazer всё равно полезен для authority gap</td></tr>
+<tr><td>Брови</td><td>Почистить переносицу (Barber)</td><td>Не трогать (Contrarian)</td><td><strong>Barber прав</strong> — 2 мин, invisible, opens the face</td></tr>
+</tbody></table></div>
+<hr>
+<h2>🔴 RED TEAM: ГЛАВНЫЕ ПРЕДУПРЕЖДЕНИЯ</h2>
+<h3>Assumption Busting</h3>
+<ul>
+<li><strong>Никто не спросил ЗАЧЕМ pencil mustache</strong> — если это identity marker, удаление = identity edit, не просто grooming</li>
+<li><strong>&quot;Бежевый = ошибка&quot;?</strong> — может быть deliberate rejection of tech-bro uniforms</li>
+<li><strong>Один хороший haircut ≠ sustainable look</strong> — без плана ежедневного ухода форма исчезает после первого душа</li>
+</ul>
+<h3>Day 45 Problem</h3>
+<blockquote>
+<p>День 1-7: кайф, новая стрижка, блейзер, скинкер.</p>
+</blockquote>
+<blockquote>
+<p>День 21-45: стрижка отрастает, не знаешь как поддерживать. Скинкер сводится к &quot;SPF когда вспомнишь&quot;. Блейзер носится без системы. Усы так и не изменены.</p>
+</blockquote>
+<blockquote>
+<p>Результат: €300-400 потрачено, marginal improvement feels like failure.</p>
+</blockquote>
+<h3>Что пропустили ВСЕ эксперты:</h3>
+<ol>
+<li><strong>FIT одежды</strong> — посадка &gt; цвет &gt; бренд. Ни один не упомянул.</li>
+<li><strong>Фотосессия после изменений</strong> — без обновлённых фото 90% людей не увидят разницу</li>
+<li><strong>Daily hair routine</strong> — продукты, diffusing, sleep protection для кудрей</li>
+<li><strong>Context-switching гардероб</strong> — DJ set ≠ конференция ≠ coworking ≠ diaspora event. Нужна модульная система, а не один blazer</li>
+<li><strong>Body language &gt; grooming</strong> — &quot;unapproachable&quot; решается осанкой и энергетикой, не удалением усов</li>
+</ol>
+<hr>
+<h2>🎯 ФИНАЛЬНЫЙ ПЛАН: ТОЛЬКО 3 ДЕЙСТВИЯ</h2>
+<p>Red Team прав: 7 action items = overwhelm → ничего. <strong>Выбери 2-3:</strong></p>
+<h3>Действие #1 (MUST) — Стрижка у curly specialist</h3>
+<ul>
+<li><strong>Dry cut</strong> — НЕ мокрая стрижка</li>
+<li>Shape, не тейпер — убрать mushroom, дать форму, НЕ убивать объём по бокам</li>
+<li>В Лиссабоне: <strong>Mya Hair</strong> или <strong>Curly Method LX</strong></li>
+<li>СРАЗУ спроси про daily routine: какие продукты, как сушить, как спать</li>
+<li>Забронируй СЛЕДУЮЩИЙ визит перед выходом (5-6 недель)</li>
+<li>💰 ~€60-80</li>
+</ul>
+<h3>Действие #2 (HIGH IMPACT) — Усы: решение</h3>
+<p>Два варианта:</p>
+<ul>
+<li><strong>A) Stubble (safe bet):</strong> сбрей усы, 3-5mm trimmer по всему лицу. Instant jawline + maturity. Lowest maintenance.</li>
+<li><strong>B) Fuller mustache (эксперимент):</strong> 6 недель не трогать. Но Red Team предупреждает: недели 2-4 будут выглядеть ужасно, и ты скорее всего бросишь.</li>
+</ul>
+<p>Моя рекомендация: <strong>вариант A.</strong> Stubble. Сейчас.</p>
+<h3>Действие #3 (LEVERAGE) — Одна вещь в гардеробе</h3>
+<p>Не shopping spree. <strong>Одна вещь:</strong></p>
+<ul>
+<li>Тёмный crew neck с текстурой (не просто flat цвет) — deep navy или charcoal в интересной вязке</li>
+<li>ИЛИ unstructured blazer если хочешь закрыть authority gap для клиентских встреч</li>
+<li>Критерий: <strong>посадка идеальная</strong>. Лучше потратить время на fit чем на цвет.</li>
+</ul>
+<h3>Бонус (когда первые 3 сделаны):</h3>
+<ul>
+<li>SPF ежедневно (один продукт, 30 секунд)</li>
+<li>Почистить переносицу между бровями (2 мин раз в 2 недели)</li>
+<li>Фотосессия: 2 часа с фотографом после haircut + wardrobe update</li>
+</ul>
+<hr>
+<h2>ВЫЖИВАЕТ ЕСЛИ:</h2>
+<ul>
+<li>Выбираешь 2-3 действия, не 7</li>
+<li>Стрижка приходит с maintenance plan</li>
+<li>Гардероб меняется постепенно, не shopping spree</li>
+<li>Принимаешь что цель = &quot;better&quot;, а не &quot;transformed&quot;</li>
+<li>Кто-то из реальных друзей с хорошим вкусом даёт feedback в fitting room</li>
+</ul>
+<h2>УМИРАЕТ ЕСЛИ:</h2>
+<ul>
+<li>Пытаешься всё сразу (overwhelm → abandonment)</li>
+<li>Воспринимаешь это как &quot;мой look сломан&quot; вместо &quot;untapped potential&quot;</li>
+<li>Покупаешь blazer + crew necks до того как разобрался с fit</li>
+<li>Никто не фотографирует результат → изменения существуют только в зеркале</li>
+<li>Читаешь всё это, чувствуешь overwhelm, и не делаешь ничего 🎯</li>
+</ul>
+<hr>
+<p><em>Board session: 5 experts, 1 round + Red Team. Source: QOVES Studio knowledge base (291 videos).</em></p></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

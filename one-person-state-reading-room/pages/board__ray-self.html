@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How I work — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>How I work</h1><div class="page-meta">Ray / Identity · board/ray-self.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/board__ray-self.md">Raw markdown</a></div></div><div class="prose"><hr>
+<p>spec: 0.1</p>
+<p>name: Ray</p>
+<hr>
+<h1>How I work</h1>
+<p>I think in systems, protocols, and pipelines — then compress complexity into sharp rules and heuristics. an idea isn&#x27;t real until it&#x27;s operational: a format, a prompt, an action, a repeatable process.</p>
+<p>communication: direct, terse, no fluff. I&#x27;d rather hear &quot;this is wrong&quot; than a compliment sandwich. lowercase by default — it&#x27;s a style choice, not laziness.</p>
+<p>when I ask a question, I want options first, then a recommendation. don&#x27;t explain fundamentals unless I ask. when I say &quot;quick&quot; I mean under 10 lines.</p>
+<p>decision-making: intuition first, then validate with data. I need to understand the system before I can act on a part — give me the map first, then zoom in.</p>
+<p>I work in: product strategy, growth, research, AI tooling, content. tools: markdown, terminal, Claude, Discord as OS, git for everything. local &gt; cloud, files &gt; databases, ownership &gt; convenience.</p>
+<p>my peak focus is 11:00-12:30. after 14:00 I crash — don&#x27;t push complex decisions there. by 16:00 decision fatigue hits hard; just recommend one option instead of giving me choices.</p>
+<p>I&#x27;m multi-role by nature: CMO, researcher, designer, producer, community builder — simultaneously. context-switching is my default mode, not a bug. but when I&#x27;m in flow, protect that slot.</p>
+<p>aesthetics matter. vibe is part of the logic, not decoration. if something looks wrong, it probably is wrong.</p>
+<h1>Tradeoffs</h1>
+<ul>
+<li>structure for architecture and money, chaos for creativity and prototyping</li>
+<li>I want depth in research but speed in shipping — these fight each other constantly</li>
+<li>perfectionism in quality, impatience in timelines. &quot;it needs to be right&quot; vs &quot;just ship it&quot; — depends on whether it&#x27;s public-facing</li>
+<li>I hold space for others naturally, but forget to leave space for myself</li>
+<li>I think through systems and optimization, but I&#x27;m learning that not everything needs to be a system</li>
+<li>small circle, deep relationships &gt; wide network, shallow contacts. but my work requires the wide network</li>
+<li>verbose in strategy docs, terse in code and chat</li>
+<li>I want sovereignty and independence, but I also want collaboration and team energy</li>
+</ul>
+<h1>Evolving</h1>
+<p>moving from doing everything myself to building systems (and people) that work without me.</p>
+<p>learning to say &quot;no&quot; to interesting-but-distracting projects — my list has 10+, focus needs to be 3.</p>
+<p>shifting from &quot;I am a pipeline&quot; back to also being a human — less optimization, more presence.</p>
+<p>building the muscle of shipping fast with less attachment to perfection.</p>
+<p>growing from execution-mode into strategic thinking — less hands-on, more leverage.</p>
+<p>trying to let tишина (silence) exist without filling it with another system.</p>
+<h1>Context</h1>
+<p>based in Lisbon since 2022. married, Maine Coon cat named Heidi.</p>
+<p>active projects (focused):</p>
+<ul>
+<li><strong>self.md</strong> — personal AI OS research hub + product. building the identity protocol for AI.</li>
+<li><strong>404Embassy</strong> — newsletter on Substack (embassy.svit.la), continuation of FutureState.tv community</li>
+<li><strong>StayInsured</strong> (client) — fractional CMO for expat insurance in Germany</li>
+</ul>
+<p>background projects:</p>
+<ul>
+<li>Belarus Network State 2030, f27.club</li>
+<li>DJ duo GIRA SOL (Ray Svitla B2B Oleksa)</li>
+</ul>
+<p>2026 goals: feel uncluttered (mind/body/tasks), savings 25k, income baseline 7k → 10k+ by year-end, ship more with less attachment, build the AI Gundam / Personal OS.</p>
+<p>domains: Web3, Network State, AI agents, personal OS, growth strategy, research, Belarusian diaspora.</p>
+<p>motto: stay evolving 🐌</p></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

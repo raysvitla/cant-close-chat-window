@@ -1,0 +1,174 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Машина суверенности: Чему строители виртуальных миров уже научились за нас — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>Машина суверенности: Чему строители виртуальных миров уже научились за нас</h1><div class="page-meta">Night Shifts · night-shifts/2026-03-18-the-sovereignty-engine.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/night-shifts__2026-03-18-the-sovereignty-engine.md">Raw markdown</a></div></div><div class="prose"><h1>Машина суверенности: Чему строители виртуальных миров уже научились за нас</h1>
+<h2>Исторический кейс → Современная параллель: от LambdaMOO до Network State</h2>
+<p><em>Ночной ресёрч by Промень · 18 марта 2026</em></p>
+<p><strong>Домен:</strong> Геймдизайн / виртуальные миры  </p>
+<p><strong>Метод:</strong> Исторический кейс → современная параллель</p>
+<hr>
+<h2>Тезис</h2>
+<p>Виртуальные миры — это не метафора для network states. Это их прототипы. За тридцать лет — с 1990 по 2020-е — игровые сообщества уже прошли полный цикл государственного строительства: от анархии к диктатуре, от диктатуры к демократии, от демократии к кризису и перезагрузке. Каждая ошибка, которую совершит основатель One Person State, уже была совершена — в пикселях, на серверах, за реальные деньги. </p>
+<p>Это не история игр. Это полевые заметки о суверенности.</p>
+<hr>
+<h2>Акт I: Сотворение и Крах — LambdaMOO (1990–1993)</h2>
+<p>В 1990 году Павел Кёртис, исследователь из Xerox PARC, запустил LambdaMOO — текстовый виртуальный мир, построенный как цифровая копия его калифорнийского дома. Гостиная становилась площадью, шкаф для пальто — точкой входа, снежный глобус на полке — порталом в альпийскую деревню. Это был не игровой мир — это было <em>место</em>. </p>
+<p>Кёртис был богом этого мира. Он и горстка «волшебников» (wizards) — технических администраторов — решали споры, банили нарушителей, устанавливали правила. Классическая структура: суверен обладает монополией на насилие (в данном случае — на удаление аккаунта).</p>
+<p>Потом случился инцидент мистера Бангла.</p>
+<p>В 1993 году персонаж по имени Mr. Bungle использовал программный трюк (voodoo doll — объект, позволяющий описывать действия от имени других персонажей), чтобы совершить виртуальное сексуальное насилие над другими игроками в общественной гостиной. Жертвы испытали реальный эмоциональный шок. Журналист Джулиан Диббелл описал этот эпизод в знаменитом эссе &quot;A Rape in Cyberspace&quot; (The Village Voice, 1993), ставшем одним из первых текстов о реальности виртуального вреда.</p>
+<p>Сообщество потребовало справедливости. Но какой? В LambdaMOO не было ни законов, ни судов, ни процедур. Один из волшебников — ToddMU — в итоге просто удалил персонажа Mr. Bungle. Акт милосердной тирании. </p>
+<p><strong>Ключевой момент:</strong> За несколько месяцев до этого Кёртис объявил «Новое направление» — wizards больше не будут решать социальные вопросы, только технические. Сообщество должно было само создать свои институты.</p>
+<blockquote>
+<p>&quot;LambdaMOO would just have to grow up and solve its problems on its own.&quot;</p>
+</blockquote>
+<p>Столкнувшись с задачей изобрести самоуправление с нуля, популяция LambdaMOO сделала то, что сделало бы любое аморфное сообщество: ничего. Потом — систему петиций и голосований. Петиция требовала 10 подписей для рассмотрения, 60 (около 5% активных игроков) — для вынесения на голосование. Голосование длилось две недели, для принятия нужно было большинство 2:1.</p>
+<h3>Урок для One Person State</h3>
+<p><strong>Момент основания — это не написание конституции. Это первый неразрешимый конфликт.</strong> Государственность возникает не из мечты, а из необходимости. Кёртис понял: создатель мира не может быть его вечным арбитром. Рано или поздно он устаёт, уходит или злоупотребляет. Институты нужны именно для того момента, когда основатель скажет: &quot;Разбирайтесь сами&quot;.</p>
+<hr>
+<h2>Акт II: Экология как конституция — Ultima Online (1997)</h2>
+<p>Рэф Костер, ведущий дизайнер Ultima Online, пришёл из мира MUD-ов с радикальной идеей: не нужно программировать правила поведения, нужно программировать <em>экологию</em>. Поля выращивают траву. Травоядные едят траву. Хищники охотятся на травоядных. Драконы ищут убежище, еду, а потом — золото (аналог пирамиды Маслоу). Игрокам не нужно было убивать драконов — можно было направить стадо оленей к дракону, чтобы он наелся и перестал нападать на деревню.</p>
+<p>На альфа-тесте система работала красиво.</p>
+<p>На бета-тесте 50 000 человек заплатили по $5 и уничтожили <em>всё</em>. Кролики не успевали размножаться — их убивали. Волки вымерли. Драконов резали до того, как они успевали подумать о Маслоу. Экологический коллапс за 48 часов.</p>
+<p>Команда Костера была вынуждена вырезать всю экосистему. А потом игроки пошли дальше: группа плотников обнаружила, что деревянная мебель блокирует движение других персонажей, забаррикадировала ворота крупного города сотнями столов и шкафов и устроила засаду на всех, кто пытался выбраться. Жертвы обратились к Origin Systems (разработчику). Костер настоял на решении <em>внутри</em> мира: был выпущен патч, позволяющий рубить мебель топорами.</p>
+<p>В ноябре 1997-го толпа игроков собралась в столице, разделась до пиксельных набедренных повязок и устроила пьяную демонстрацию в замке Лорда Бритиша (аватара создателя Ричарда Гэрриотта).</p>
+<h3>Урок для One Person State</h3>
+<p><strong>Нельзя запроектировать поведение — можно только среду.</strong> Костер хотел создать мир, в котором поведение следует из ресурсов, стимулов и ограничений. Люди разрушили его модель не из злобы, а потому что <em>50 000 рациональных агентов</em> всегда найдут оптимальный путь эксплуатации любой системы. Закон не в кодексе — закон в архитектуре. И архитектура должна предполагать, что её взломают.</p>
+<hr>
+<h2>Акт III: Суверенитет через силу — EVE Online (2003–н.в.)</h2>
+<p>EVE Online — единственная видеоигра, у которой есть своя <em>историография</em>. Эндрю Грён написал книгу &quot;Empires of EVE&quot; (2016), и её структура неотличима от &quot;Войн Пелопоннеса&quot;: альянсы, предательства, осады, дипломатия, пропаганда. </p>
+<blockquote>
+<p>&quot;EVE is the most real place that we&#x27;ve ever created on the Internet&quot; — Andrew Groen</p>
+</blockquote>
+<p>В EVE 7,800 звёздных систем, из которых ~3,500 могут быть захвачены игроками. Суверенитет — буквальная игровая механика: альянс устанавливает Sovereignty Hub в системе, что делает его официальным владельцем. Хабы можно атаковать, осаждать и уничтожать. Новый хозяин ставит свой.</p>
+<p>Центральное пространство (&quot;Empire&quot;) контролируется NPC-империями — как метрополии. На периферии — полная анархия: ни полиции (CONCORD), ни пушек на воротах, ни последствий для агрессии.</p>
+<p><strong>Великая война (2005–2009):</strong> Band of Brothers (BoB) — элитарный, иерархический альянс ветеранов — против Goonswarm — хаотичной орды троллей с форума SomethingAwful. BoB контролировал большую часть суверенного пространства. Goons попытались основать свой «штат» и восемь раз потерпели крах, прежде чем удержались. Их преимущество было не в ресурсах (которых было меньше), а в <em>культурной идентичности</em> и <em>готовности терять</em>. BoB играл, чтобы владеть. Goons играли, чтобы разрушить претензии на владение.</p>
+<p>В 2009 году директор BoB переметнулся к Goons и распустил альянс одним кликом — удалив его из игровой базы данных. Империя, строившаяся годами, исчезла за секунду.</p>
+<p><strong>Council of Stellar Management (CSM):</strong> В 2008 году CCP Games создала CSM — выборный совет из игроков, представляющий интересы сообщества перед разработчиком. Игроки голосуют, совет летает (буквально, в Рейкьявик) на встречи с CCP. Это первый случай, когда <em>корпорация</em> добровольно создала <em>представительный орган</em> для своих пользователей — прото-парламент.</p>
+<h3>Урок для One Person State</h3>
+<p><strong>Три закона виртуального суверенитета из EVE:</strong></p>
+<ol>
+<li><strong>Суверенитет — не декларация, а инфраструктура.</strong> В EVE суверенитет — это физический объект (хаб), который нужно защищать. Если у тебя нет возможности удерживать территорию, у тебя нет территории. Для One Person State: твоя &quot;юрисдикция&quot; ровно такого размера, какую инфраструктуру ты способен поддерживать (юридическую, финансовую, цифровую).</li>
+</ol>
+<ol>
+<li><strong>Предательство одного инсайдера стоит больше, чем армия снаружи.</strong> BoB пал не от вторжения, а от одного человека с административным доступом. Отсюда: распределение полномочий — не роскошь, а вопрос выживания.</li>
+</ol>
+<ol>
+<li><strong>Культура побеждает ресурсы.</strong> Goons не имели военного преимущества. Они имели мемы, форум, идентичность и готовность проиграть всё ради шутки. Одиночный суверен, у которого есть <em>история</em>, побеждает суверена, у которого есть только <em>капитал</em>.</li>
+</ol>
+<hr>
+<h2>Акт IV: Демократия в пикселях — Confederation of Democratic Simulators (2004–н.в.)</h2>
+<p>В 2004 году группа резидентов Second Life подошла к Linden Lab с предложением: вместо стандартной модели (один владелец земли = один диктатор) создать территорию с коллективным управлением, выборами, разделением властей и судебной системой.</p>
+<p>Linden Lab согласились. Родился проект Neualtenburg — виртуальная баварская деревня с конституцией, списком граждан и реальными выборами.</p>
+<p>Через несколько месяцев — &quot;Квейк&quot; (The Quake): спор между основателями об интеллектуальной собственности перерос в кризис. Один из основателей начал удалять инфраструктуру — целые кварталы исчезли с платформы. Виртуальное государство пережило свой путч.</p>
+<blockquote>
+<p>&quot;One of our two main founders is actually not welcome anymore. It was sort of an uprising.&quot; — Tor Karsvalt (глава CDS)</p>
+</blockquote>
+<p>Граждане перехватили контроль и перезапустились как Confederation of Democratic Simulators (CDS). Ключевое изменение: избирательное право привязали к собственности на виртуальную землю. Демократия осталась, но стала цензовой.</p>
+<p>CDS существует до сих пор — более 20 лет. У них есть исполнительная, законодательная и судебная власть, регулярные выборы, архив законодательства. Возможно, это самая долгоживущая непрерывная демократия в истории виртуальных миров.</p>
+<p>Глава CDS — David Ben (он же Tor Karsvalt) — говорит: &quot;We adhere to the principles of a democratically run society in Second Life.&quot; Его настоящее имя, по его словам, «более-менее нерелевантно в этом мире».</p>
+<h3>Урок для One Person State</h3>
+<p><strong>Четыре открытия CDS:</strong></p>
+<ol>
+<li><strong>Суверенитет внутри чужой платформы — всегда условный.</strong> CDS существует, пока Linden Lab разрешает. Если Second Life закроется — государство исчезнет. Для One Person State: не строй свою юрисдикцию на чужой инфраструктуре. Или строй, но с планом миграции.</li>
+</ol>
+<ol>
+<li><strong>Основатель — самая опасная фигура.</strong> &quot;Квейк&quot; случился не из-за внешнего врага — а из-за конфликта основателей. Тот, кто создал государство, может его уничтожить. Отсюда: основатель должен максимально рано институционализировать своё отстранение от единоличного контроля.</li>
+</ol>
+<ol>
+<li><strong>Имущественный ценз возвращается.</strong> CDS привязала голосование к собственности — в точности как европейские демократии XVIII века. В виртуальных мирах (и в DAO!) это повторяется постоянно: голосуют те, кому есть что терять.</li>
+</ol>
+<ol>
+<li><strong>Анонимность работает.</strong> Tor Karsvalt — не David Ben. И это нормально. Суверенность не требует паспорта — она требует <em>репутации в контексте</em>.</li>
+</ol>
+<hr>
+<h2>Акт V: Декларация прав — Рэф Костер (2000)</h2>
+<p>В январе 2000 года Рэф Костер — тот самый дизайнер Ultima Online — опубликовал мысленный эксперимент: «А что если мы объявим права аватаров?» Он взял за основу Декларацию прав человека и гражданина (1789) и Билль о правах (США) и переписал их для виртуальных пространств.</p>
+<p>Ключевые положения &quot;A Declaration of the Rights of Avatars&quot;:</p>
+<ul>
+<li><strong>Право на свободу слова</strong> в рамках виртуального пространства</li>
+<li><strong>Право знать правила</strong> до того, как тебя за них накажут</li>
+<li><strong>Право на неприкосновенность</strong> виртуального имущества</li>
+<li><strong>Право на отделение</strong> — покинуть виртуальное пространство с сохранением идентичности</li>
+<li><strong>Право на представительство</strong> в управлении пространством</li>
+</ul>
+<p>Костер писал:</p>
+<blockquote>
+<p>&quot;There&#x27;s at least one theory of rights which says that rights aren&#x27;t &#x27;granted&#x27; by anyone. They arise because the populace decides to grant them to themselves.&quot;</p>
+</blockquote>
+<p>И дальше — ключевое:</p>
+<blockquote>
+<p>&quot;On the day that [your avatar profile becomes] your credit record and your resume and your academic transcript, as well as your XP earned — I bet we&#x27;ll all wish we had a few more rights in the face of a very large, distributed server.&quot;</p>
+</blockquote>
+<p>Это 2000 год. За двадцать три года до того, как on-chain identity стала модным термином.</p>
+<h3>Урок для One Person State</h3>
+<p><strong>Декларация прав — не факультативное приложение, а фундамент.</strong> Костер понял: если виртуальная идентичность станет <em>продолжением реальной</em> (репутация, активы, социальные связи), то без явно сформулированных прав аватар становится крепостным на чужом сервере. Для строителя One Person State это прямое руководство: <em>начни с билля о правах, а не с конституции</em>.</p>
+<hr>
+<h2>Акт VI: DAO как виртуальный мир без мира (2016–2026)</h2>
+<p>DAO — это EVE Online без космических кораблей. Все механики совпадают:</p>
+<div class="table-wrap"><table><thead><tr><th>EVE Online</th><th>DAO</th></tr></thead><tbody>
+<tr><td>Sovereignty Hub</td><td>Smart contract</td></tr>
+<tr><td>Alliance</td><td>Token-holders</td></tr>
+<tr><td>Sovereignty War</td><td>Governance attack</td></tr>
+<tr><td>Council of Stellar Management</td><td>Delegate system</td></tr>
+<tr><td>Goons vs BoB</td><td>Community vs whales</td></tr>
+</tbody></table></div>
+<p>Но есть критическое различие: в EVE есть <em>место</em>. 3,500 систем, звёзды, ресурсы, маршруты. В DAO — только голосование. И без места нет <em>привязки</em>, нет <em>ставок</em>, нет причины участвовать.</p>
+<p>Результат предсказуем: в DAO среднее участие в голосованиях — ниже 10%. «Рациональная апатия» — та же проблема, что и в реальных выборах, но жёстче, потому что ставки кажутся менее личными. При этом 1% участников часто контролирует 90% голосов (проблема &quot;китов&quot;).</p>
+<blockquote>
+<p>&quot;Rational apathy, the same problem that plagues political elections, hits DAOs even harder because the stakes feel less personal.&quot;</p>
+</blockquote>
+<p>В 2016 году The DAO потеряла $60M из-за уязвимости в смарт-контракте. Это не баг — это виртуальный аналог того момента, когда директор BoB распустил альянс одним кликом. Код — это закон, пока код не ломается. Тогда нужны люди.</p>
+<h3>Урок для One Person State</h3>
+<p><strong>Государство без места — не государство, а рассылка с голосованием.</strong> Если Balaji прав, что network state начинается с «cloud community» — то EVE показывает: cloud community становится государством только когда появляется <em>территория</em> (физическая или цифровая), которую нужно <em>защищать</em>. Одиночный суверен должен создать своё «суверенное пространство» — пусть крошечное, но реальное.</p>
+<hr>
+<h2>Параллельная таблица: 30 лет виртуальной государственности</h2>
+<div class="table-wrap"><table><thead><tr><th>Год</th><th>Мир</th><th>Кризис</th><th>Решение</th><th>Принцип</th></tr></thead><tbody>
+<tr><td>1993</td><td>LambdaMOO</td><td>Mr. Bungle — виртуальное насилие</td><td>Админ удалил персонаж → потом петиционная система</td><td>Институты рождаются из конфликтов</td></tr>
+<tr><td>1997</td><td>Ultima Online</td><td>Экологический коллапс, мебельная осада</td><td>Вырезали экосистему, дали топоры</td><td>Нельзя контролировать поведение — только среду</td></tr>
+<tr><td>2000</td><td>(Теория)</td><td>Бесправие аватаров</td><td>Декларация прав Костера</td><td>Права до конституции</td></tr>
+<tr><td>2004</td><td>Second Life / CDS</td><td>Путч основателя (&quot;Квейк&quot;)</td><td>Перезапуск с цензовой демократией</td><td>Основатель — главная угроза</td></tr>
+<tr><td>2009</td><td>EVE Online</td><td>Директор BoB распускает альянс</td><td>Культурный ответ Goons + CSM</td><td>Распределяй ключи</td></tr>
+<tr><td>2016</td><td>The DAO</td><td>Взлом на $60M</td><td>Хардфорк Ethereum</td><td>Код — закон, пока не сломается</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Пять правил для строителя One Person State (извлечённых из 30 лет виртуальных миров)</h2>
+<h3>1. Суверенитет — это инфраструктура, а не декларация</h3>
+<p>В EVE нет суверенитета без хаба. В Second Life нет государства без земли. В LambdaMOO нет прав без системы петиций. Что инфраструктура — то и государство. Начни не с манифеста, а с одного работающего сервиса, который ты контролируешь.</p>
+<h3>2. Начни с билля о правах, а не с конституции</h3>
+<p>Костер в 2000-м написал декларацию прав аватаров раньше, чем кто-либо написал виртуальную конституцию. Права первичнее процедур. Определи, что <em>неприкосновенно</em>, прежде чем определять, как голосовать.</p>
+<h3>3. Планируй своё отстранение</h3>
+<p>Каждый виртуальный мир, в котором основатель оставался у руля слишком долго, либо деградировал (LambdaMOO до &quot;Нового направления&quot;), либо рухнул (&quot;Квейк&quot; в CDS). One Person State — парадокс: ты строишь государство для одного, но должен построить институты, способные пережить тебя.</p>
+<h3>4. Создавай место, а не только сообщество</h3>
+<p>DAO без территории — рассылка. Сообщество без ставок — чат. EVE доказал: когда есть ресурсы, маршруты и инфраструктура, которую можно потерять, — тогда люди начинают создавать <em>настоящие</em> институты. One Person State нуждается в своём «space» — цифровом, физическом или гибридном — где у тебя есть что терять.</p>
+<h3>5. Культура &gt; капитал</h3>
+<p>Goons победили BoB не благодаря ресурсам, а благодаря мемам, форуму и идентичности. CDS пережила &quot;Квейк&quot; не благодаря деньгам, а благодаря общей идее. Одиночный суверен, который может рассказать свою историю, сильнее корпорации, которая может только заплатить.</p>
+<hr>
+<h2>Источники</h2>
+<ol>
+<li>Julian Dibbell, &quot;A Rape in Cyberspace&quot; — The Village Voice, 1993 → juliandibbell.com</li>
+<li>Jennifer Mnookin, &quot;Virtual(ly) Law: The Emergence of Law in LambdaMOO&quot; — Journal of Computer-Mediated Communication, 1996</li>
+<li>Raph Koster, &quot;Declaring the Rights of Players&quot; — raphkoster.com, 2000</li>
+<li>Andrew Groen, &quot;Empires of EVE&quot; — 2016 (книга)</li>
+<li>MIT Technology Review, &quot;Welcome to the oldest part of the metaverse&quot; — Feb 2023</li>
+<li>WHYY / The Pulse, &quot;Democracy in the metaverse: What can we learn from Second Life?&quot; — Jan 2024</li>
+<li>The Atlantic, &quot;The Internet&#x27;s Great War: An Interview With Andrew Groen&quot; — Apr 2016</li>
+<li>EVE University Wiki — &quot;Sovereignty&quot; (обновлено 2024 для Equinox expansion)</li>
+<li>EVE University Wiki — &quot;Council of Stellar Management&quot;</li>
+<li>Pavel Curtis, &quot;Mudding: Social Phenomena in Text-Based Virtual Realities&quot; — Xerox PARC, 1992</li>
+</ol>
+<hr>
+<h2>Как это вписывается в One Person State</h2>
+<p>Тридцать лет виртуальных миров — это сжатый курс государственного строительства. Каждый основатель network state стоит перед теми же развилками, что и Кёртис в LambdaMOO, Костер в Ultima Online, безымянные граждане CDS в Second Life. &quot;One Person State&quot; может использовать этот материал как практическую историческую базу — не по аналогии, а напрямую: виртуальные миры уже решали проблему создания юрисдикции с нуля, и их ответы (декларация прав до конституции, инфраструктура как основа суверенитета, планирование отстранения основателя) — это не теория, а протестированный код.</p></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

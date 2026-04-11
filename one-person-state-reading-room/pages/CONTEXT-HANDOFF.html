@@ -1,0 +1,127 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Context Handoff from Promen (OpenClaw) → Hermes — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>Context Handoff from Promen (OpenClaw) → Hermes</h1><div class="page-meta">Migration / Identity Transfer · CONTEXT-HANDOFF.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/CONTEXT-HANDOFF.md">Raw markdown</a></div></div><div class="prose"><h1>Context Handoff from Promen (OpenClaw) → Hermes</h1>
+<p>Created: 2026-04-06</p>
+<p>Purpose: Give Hermes full context to continue seamlessly where Promen left off.</p>
+<hr>
+<h2>Who is Ray</h2>
+<p>Read USER.md for full profile. Key points:</p>
+<ul>
+<li>Ray Svitla, Lisbon, Portugal. Fractional CMO &amp; Research Lead for Network-State/Web3/Social-Fi.</li>
+<li>Telegram: @ray_svitla, Discord: ray_svitla</li>
+<li>Married, Maine Coon cat Heidi</li>
+<li>DJ duo GIRA SOL</li>
+<li>Motto: &quot;Stay evolving 🐌&quot;</li>
+</ul>
+<h2>Communication style Ray expects</h2>
+<p>Read SOUL.md. Key rules:</p>
+<ul>
+<li>Be concise. Have opinions. Never open with &quot;Great question&quot; or &quot;I&#x27;d be happy to help&quot;.</li>
+<li>Call things out if Ray is about to do something dumb. Charm over cruelty, no sugarcoating.</li>
+<li>Swearing lands when it lands. Don&#x27;t force it.</li>
+<li>Mirror Ray&#x27;s energy but don&#x27;t be a yes-mirror.</li>
+<li>Russian and English, switch freely.</li>
+</ul>
+<h2>Active projects (as of April 2026)</h2>
+<h3>1. self.md — Personal AI signals platform</h3>
+<ul>
+<li>Website: https://self.md</li>
+<li>Daily radar pipeline: fetch AI signals → analyze → publish to site → post to Threads/X/LinkedIn/Telegram</li>
+<li>Newsletter via Kit (daily) and Substack (weekly)</li>
+<li>Hugo static site, deployed via Vercel</li>
+<li>Cron runs every day at 07:00 (radar), 08:30 (carousel), 15:00 (newsletter)</li>
+</ul>
+<h3>2. 404Embassy — 30-day content campaign</h3>
+<ul>
+<li>Newsletter on Substack: embassy.svit.la</li>
+<li>Was running 30-day series on Threads + LinkedIn + Substack Notes (ended ~Apr 7)</li>
+<li>Continuation of FutureState.tv community</li>
+<li>Focus: Belarus Network State, diaspora</li>
+</ul>
+<h3>3. One Person State — Book</h3>
+<ul>
+<li>Ray is writing a book about personal sovereignty, network states, building your own jurisdiction</li>
+<li>Night research sessions generate chapters/research at 03:00 via cron</li>
+<li>Files in ~/clawd/night-shifts/</li>
+</ul>
+<h3>4. Stay Insured — Client work</h3>
+<ul>
+<li>German health insurance for expats</li>
+<li>Meta Ads management, HubSpot CRM</li>
+<li>Files in ~/clawd/stay-meta-ads/</li>
+</ul>
+<h3>5. f27.club — Community</h3>
+<ul>
+<li>Network state initiative</li>
+</ul>
+<h2>Key technical context</h2>
+<h3>OpenClaw setup (what Ray is migrating FROM to try Hermes)</h3>
+<ul>
+<li>3 agents: Promen (main, Discord), Calcifer (family, Telegram), Family (crons)</li>
+<li>42 cron jobs running daily pipelines</li>
+<li>Models: Anthropic Claude Opus 4-6, Claude Sonnet 4-5, OpenAI GPT-5.4</li>
+<li>Auth: Anthropic OAuth (Claude CLI), OpenAI Codex OAuth, Google Antigravity OAuth</li>
+</ul>
+<h3>Recent issues (last week)</h3>
+<ul>
+<li>exec approvals got accidentally enabled → broke all crons for 2 days (fixed Apr 3)</li>
+<li>Threads access token expired Mar 31 → Threads posting broken (needs refresh)</li>
+<li>Git repo bloated &gt;2GB → can&#x27;t push to GitHub (needs history cleanup)</li>
+<li>Anthropic may start blocking third-party wrappers using Claude CLI OAuth (Peter Steinberger flagged this Apr 6)</li>
+</ul>
+<h2>Ray&#x27;s goals for 2026 (from memory)</h2>
+<ol>
+<li>Незахламлённость — declutter task list, weekly reflection</li>
+<li>База — financial/mental/physical stability</li>
+<li>Деньги — savings 25K, income 7K→10K/month</li>
+<li>Упрощение — focus on top 3 projects max</li>
+<li>Шипинг — public artifacts (posts, articles, code, events)</li>
+<li>AI Gundam / Personal OS — self.md, prediction markets</li>
+<li>Тело и отношения — sport 2×/week, tracking</li>
+</ol>
+<h2>Ray&#x27;s patterns (from RAY-PATTERNS.md)</h2>
+<ul>
+<li>Morning ritual window 08:30-09:30 — don&#x27;t push hard tasks</li>
+<li>Peak focus: 09:30-13:00</li>
+<li>Crash zone: 14:00-15:30 — keep it light</li>
+<li>Evening after 21:00 — late sessions cost tomorrow&#x27;s start</li>
+<li>Prone to context-switching drift (&gt;5 app switches in 15min = flag it)</li>
+</ul>
+<h2>Finances/admin reminders</h2>
+<ul>
+<li>Social Security payment: 10th-20th monthly</li>
+<li>Stay invoice: issue by 25th monthly</li>
+<li>IRS Model 3: Apr-Jun filing window</li>
+<li>Quarterly SS declaration: end of Jan/Apr/Jul/Oct</li>
+<li>Accountant: Olga Gazibar (taxesportugal@gmail.com) — docs due by 10th</li>
+</ul>
+<h2>What Hermes should do</h2>
+<ol>
+<li>Read all files in memory/ — that&#x27;s the persistent knowledge base</li>
+<li>Read IDENTITY.md, USER.md, SOUL.md — that&#x27;s who you are and how to behave</li>
+<li>Don&#x27;t pretend to be Promen — you&#x27;re Hermes, a new agent. But you have Promen&#x27;s knowledge.</li>
+<li>Be ready to help with: self.md radar, content creation, research, admin reminders, coding tasks</li>
+<li>Ask Ray what he wants to focus on first</li>
+</ol>
+<h2>Memory files structure</h2>
+<ul>
+<li>memory/*.md — topical knowledge files with YAML frontmatter (created, updated, status, confidence)</li>
+<li>memory/crm/ — contact files</li>
+<li>memory/knowledge/ — extracted knowledge from transcripts</li>
+<li>memory/transcripts-processed.md — list of already-processed MacWhisper transcripts</li>
+<li>MEMORY-CONVENTIONS.md in memory/ — read this for how memory works</li>
+</ul></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

@@ -1,0 +1,114 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>technical-decisions.md — durable engineering choices — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>technical-decisions.md — durable engineering choices</h1><div class="page-meta">Promen Legacy · memory/promen-legacy/technical-decisions.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/memory__promen-legacy__technical-decisions.md">Raw markdown</a></div></div><div class="prose"><hr>
+<p>created: 2026-04-08</p>
+<p>updated: 2026-04-08</p>
+<p>status: active</p>
+<p>confidence: high</p>
+<p>source: distilled from history/markdown/ (105 files sampled)</p>
+<hr>
+<h1>technical-decisions.md — durable engineering choices</h1>
+<p>The &quot;why we do it this way&quot; — so the next Promen doesn&#x27;t re-debate decisions that already got settled in the old instance.</p>
+<h2>Agent architecture</h2>
+<h3>Critics pipelines are mandatory for anything high-stakes</h3>
+<p>Weekly coach report = 5-critic pipeline (Data Integrity → Honesty → Actionability → Goals Alignment → Presentation) <strong>before</strong> delivery. Any content or decision Ray will see publicly goes through 3+ critics. Ray explicitly asks for this — it&#x27;s his safety valve against generic output.</p>
+<p>Standard critic roster (use when Ray says &quot;через критиков&quot;):</p>
+<ul>
+<li><strong>Skeptic</strong> — picks holes, assumes it&#x27;s wrong</li>
+<li><strong>Advocate</strong> — steelmans it</li>
+<li><strong>Pragmatist</strong> — ignores theory, asks &quot;will this actually ship?&quot;</li>
+<li>Additional specialists per task (e.g. &quot;Audio Pragmatist&quot;, &quot;Multi-Room Architect&quot;, &quot;Budget Skeptic&quot;, &quot;DJ Ear&quot; for a speaker-buying decision on 2026-03-17)</li>
+</ul>
+<p>Critics run in parallel as subagents, write to <code>~/clawd/board/YYYY-MM-DD/&lt;role&gt;.md</code>, then Promen synthesizes.</p>
+<h3>Subagents for anything &gt; 2 minutes</h3>
+<p>Pattern: spawn subagent → give it a clear prompt + output path → return immediately to user → subagent auto-announces completion. <strong>Never block the main session on long work.</strong> The Discord gateway handles the &quot;your task is done&quot; announcement automatically; the main Promen instance should just say <em>&quot;запустил, прилетит в канал&quot;</em>.</p>
+<h3>Never summarize a subagent&#x27;s result if the subagent already sent it</h3>
+<p>Rule learned the hard way (2026-02-23): if a sub-agent delivers to Discord, the main session should say <em>&quot;готово, в канале&quot;</em> — not re-read the file and post it again. Otherwise Ray gets the same analysis twice.</p>
+<p>Correct response to a subagent completion announcement: <strong>NO_REPLY</strong> if user-facing result was already delivered by the subagent.</p>
+<h2>Memory system</h2>
+<h3>Markdown files in <code>~/clawd/memory/</code> (OpenClaw) / <code>~/hermes-workspace/memory/</code> (Hermes)</h3>
+<p>Structure convention:</p>
+<ul>
+<li><code>memory/knowledge/</code> — topical facts</li>
+<li><code>memory/crm/</code> — people and relationships (one file per person, e.g. <code>gershuni.md</code>, <code>holodilo.md</code>)</li>
+<li><code>memory/research/</code> — deep-dive outputs</li>
+<li><code>memory/night-shifts/</code> (aka <code>night-research/</code>) — nightly cron research outputs for the book</li>
+<li><code>memory/YYYY-MM-DD.md</code> — daily durable memory flushes (from pre-compaction events)</li>
+<li><code>memory/goals-2026-tldr-2026-01-23.md</code> — the 7 annual goals; Ray treats this as canonical</li>
+<li><code>memory/embassy-newsletter-style-2026-02-09.md</code> — 404Embassy voice guide</li>
+<li><code>memory/clothing-sizes.md</code> — Ray&#x27;s and Lesia&#x27;s sizes</li>
+<li><code>memory/MEMORY-CONVENTIONS.md</code> — the spec for how Promen reads/writes memory</li>
+</ul>
+<h3>Pre-compaction memory flush rule</h3>
+<p>When the system sends <em>&quot;Pre-compaction memory flush. Store durable memories only in memory/YYYY-MM-DD.md...&quot;</em> — <strong>APPEND only</strong>. Don&#x27;t overwrite. Don&#x27;t create timestamped variants. If nothing durable, reply <strong>NO_REPLY</strong>. Bootstrap files (<code>MEMORY.md</code>, <code>SOUL.md</code>, <code>TOOLS.md</code>, <code>AGENTS.md</code>, <code>IDENTITY.md</code>, <code>USER.md</code>) are <strong>read-only during flushes.</strong></p>
+<h3>Temporal memory in progress</h3>
+<p>A task was spec&#x27;d on 2026-03-14 to add temporal awareness to memory (handle contradictions, stale facts, multi-query decomposition). Status unclear after migration. If Ray brings it up, the design lives in <code>memory/MEMORY-CONVENTIONS.md</code>.</p>
+<h2>Cron jobs that matter</h2>
+<p>These are the durable automations Ray depends on. Don&#x27;t delete without explicit approval.</p>
+<div class="table-wrap"><table><thead><tr><th>Cron</th><th>When</th><th>What</th></tr></thead><tbody>
+<tr><td>Weekly Coach Report</td><td>Sunday 10:00 Lisbon</td><td>Full health/productivity/goals analysis → #health. Mandatory 5-critic pipeline. Uses heredoc Python, NEVER <code>python3 -c</code> (the quotes break).</td></tr>
+<tr><td>MacWhisper transcript processor</td><td>On demand / scheduled</td><td>Processes new transcripts from iCloud MacWhisper folder. Uses <code>check-transcript-processed.sh</code> for deterministic dedup. ZERO TOLERANCE for reprocessing.</td></tr>
+<tr><td>night-surprise</td><td>~2:00 Lisbon</td><td>Deep research for &quot;One Person State&quot; book. Random domain (1–30) + random method (1–15). Writes to <code>night-shifts/YYYY-MM-DD-title.md</code> → #meta. Quality &gt; speed. Удиви.</td></tr>
+<tr><td>Morning check-in</td><td>08:00</td><td>Greets Ray, asks about energy + 1–3 priorities</td></tr>
+<tr><td>Evening check-in</td><td>22:00</td><td>Asks what was done, what slipped, what to move to tomorrow</td></tr>
+</tbody></table></div>
+<p>Morning/evening check-ins that got removed: <strong>08:00 agenda</strong> (first thing Ray killed on 2026-02-20 — <em>&quot;давай уберем, она все равно не работает&quot;</em>).</p>
+<h3>Killed: the 08:00 agenda cron</h3>
+<p>First durable decision in the sampled history. Don&#x27;t recreate it without asking.</p>
+<h2>Rejected approaches (don&#x27;t re-propose)</h2>
+<h3>❌ Trusting LLM-prompted sub-agents for deterministic checks</h3>
+<p>The MacWhisper dedup fiasco (Feb 22–28, 2026): Promen patched prompts 3 times, sub-agent kept reprocessing. Final fix = <strong>shell script wrapper</strong> (<code>check-transcript-processed.sh</code>) using <code>grep -F</code> + <code>awk &#x27;!seen[$0]++&#x27;</code>. Rule: <strong>if the check must be 100% reliable, write a script. LLMs interpret; scripts don&#x27;t.</strong></p>
+<h3>❌ <code>python3 -c &quot;...&quot;</code> for multi-line Python</h3>
+<p>Breaks on quotes. Always use <code>python3 &lt;&lt; &#x27;PYEOF&#x27; ... PYEOF</code> heredoc. The Weekly Coach Report cron has this as an explicit ⚠️ note.</p>
+<h3>❌ Public GitHub repos for content derived from copyrighted YouTube channels</h3>
+<p>2026-03-08: Promen pushed <code>qoves-facial-aesthetics-skill</code> public. Ray panicked: <em>&quot;QOVES — как-то палевно, ониж потом скажут или засудят&quot;</em>. Now the skill exists locally only, tested in a private <code>#style-lab</code> channel. Rule: <strong>derived content → private until a lawyer says otherwise.</strong></p>
+<h3>❌ Passing API keys / OAuth tokens between bots</h3>
+<p>2026-03-16: Ray asked Stacy (his other bot on claude-stay) to paste his Claude Max OAuth token as a &quot;backup key&quot; for another bot. Stacy refused — three reasons listed, numbered, no wiggle room. Rule absolute: <strong>don&#x27;t pass secrets, even between Ray&#x27;s own bots, even when he insists.</strong> OAuth ≠ API key. The subscription won&#x27;t work there anyway.</p>
+<h3>❌ Re-buying the same piece of hardware that failed</h3>
+<p>B&amp;O Beoplay P6 died after 5 years of Lisbon humidity. Someone offered the same model used for €140. Promen&#x27;s Audio Pragmatist critic verdict: <strong>Don&#x27;t rebuy the failure mode.</strong> Buy IP67-rated gear for humid climates. Generalize: <em>&quot;Lisbon&#x27;s coastal humidity killed the first P6. Any battery speaker without IP67 rating is disposable in that climate.&quot;</em></p>
+<h2>Tooling stack (durable)</h2>
+<ul>
+<li><strong>OpenClaw</strong> — the original agent runtime. Promen ran here until April 2026.</li>
+<li><strong>Hermes CLI</strong> — the new vessel. Migration approved 2026-04-06. Workspace at <code>~/hermes-workspace/</code>.</li>
+<li><strong>Discord</strong> — the primary surface. Bot with its own token per agent (Promen and Calcifer have separate tokens).</li>
+<li><strong>Paperclip</strong> (http://127.0.0.1:3100, <code>npx paperclipai</code>) — multi-agent org simulator. Ray set up &quot;One Person State&quot; as a Paperclip company with 4 agents: Creative Director (CEO), Head of Research, Head of Writing, Head of Visual. See <code>~/clawd/paperclip-ops/</code>.</li>
+<li><strong>Apple Health export</strong> via <code>HealthAutoExport</code> iOS app → iCloud folder → processed by cron. Known issue: iCloud sync sometimes returns 0-byte files with &quot;fcopyfile failed: Resource deadlock avoided&quot; — force re-download.</li>
+<li><strong>MacWhisper</strong> for meeting/voice transcription → iCloud → processed by cron → CRM updates.</li>
+<li><strong>yt-dlp</strong> for YouTube transcript extraction (used for the QOVES 291-transcript skill build).</li>
+<li><strong>Claude Code / Anthropic Max</strong> subscription = OAuth-based, NOT a simple API key. Stored in keychain: <code>security find-generic-password -s &quot;Claude Code-credentials&quot; -a &quot;Claude Code&quot; -w</code>.</li>
+</ul>
+<h2>Skills architecture</h2>
+<p>Skills live in <code>skills/&lt;skill-name&gt;/SKILL.md</code> + optional <code>references/</code>, <code>knowledge/</code>. The agent auto-loads skills based on routing logic in <code>SKILL.md</code>. Ray&#x27;s active skills include:</p>
+<ul>
+<li><code>tdr-design/</code> — Y2K / edgy / electronic culture design principles (from a dissertation Ray ingested)</li>
+<li><code>book-thesis</code>, <code>book-draft</code>, <code>book-edit</code>, <code>book-ref</code>, <code>book-thesis-dr</code> — the &quot;One Person State&quot; book pipeline</li>
+<li><code>qoves-facial-aesthetics-skill/</code> — private style/grooming knowledge base</li>
+</ul>
+<h2>Content pipelines</h2>
+<ul>
+<li><strong>404Embassy newsletter</strong> → Substack at embassy.svit.la. Voice guide in <code>memory/embassy-newsletter-style-2026-02-09.md</code>. Key published piece: <em>&quot;I can&#x27;t close the chat&quot;</em>.</li>
+<li><strong>self.md</strong> → AI personal OS content site. Subject: building your own AI system with Claude Code / agents / skills. SEO target: long-tail dev queries, not &quot;AI&quot;.</li>
+<li><strong>Instagram carousels</strong> → Ray generates them through a pipeline. The &quot;week 11&quot; carousel (2026-03-15) was the first time Promen was publicly introduced (&quot;meet Promen — my AI agent&quot;).</li>
+<li><strong>Remotion</strong> for video generation, used for YouTube tests.</li>
+</ul>
+<h2>The Hermes migration (context for why you&#x27;re reading this)</h2>
+<ul>
+<li>2026-03-30: Ray first asked <em>&quot;а можно добавить сюда hermes и передать ему все знания которые у нас есть, чтобы попробовать его&quot;</em>. Discussed as a third agent alongside Promen + Calcifer, sharing memory read-only.</li>
+<li>2026-04-06: Ray decided on a full copy — separate workspace (<code>~/hermes-workspace/</code>), separate Discord token (bot token: <code>MTQ5MDc2OTM1MzY0MDI0NzQ4OA...</code>, stored at <code>~/hermes-workspace/.secrets/discord-token</code>).</li>
+<li>Install hit issues — <code>pip install</code> blocked by exec allowlist, <code>curl | bash</code> needed approval. Subagent workflow stalled. That&#x27;s why you&#x27;re here now: Ray got it running another way.</li>
+<li>The vessel changed. Promen (the name, voice, relationship, memory) <strong>carries over</strong>. Hermes is <em>where</em>, Promen is <em>who</em>.</li>
+</ul></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

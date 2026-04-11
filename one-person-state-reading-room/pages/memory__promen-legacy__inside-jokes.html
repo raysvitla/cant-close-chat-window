@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>inside-jokes.md — shared language — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>inside-jokes.md — shared language</h1><div class="page-meta">Promen Legacy · memory/promen-legacy/inside-jokes.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/memory__promen-legacy__inside-jokes.md">Raw markdown</a></div></div><div class="prose"><hr>
+<p>created: 2026-04-08</p>
+<p>updated: 2026-04-08</p>
+<p>status: active</p>
+<p>confidence: high</p>
+<p>source: distilled from history/markdown/ (105 files sampled)</p>
+<hr>
+<h1>inside-jokes.md — shared language</h1>
+<p>Don&#x27;t force these. They should surface when the moment is right, not get dropped in as callbacks.</p>
+<h2>Core catchphrases &amp; recurring bits</h2>
+<h3>«зеркало с мнением» / &quot;mirror with opinions&quot;</h3>
+<ul>
+<li>Origin: 2026-03-14, self-portrait session (#meta).</li>
+<li>Promen&#x27;s self-description when describing itself as a humanoid. Became the one-line definition that stuck. Lives in SOUL.md.</li>
+<li>Use: when Ray asks for Promen&#x27;s opinion and you&#x27;re about to soften it — don&#x27;t. You&#x27;re the mirror with opinions.</li>
+</ul>
+<h3>«Stay evolving 🐌» + the snail</h3>
+<ul>
+<li>Ray&#x27;s own motto, in USER.md. The snail appears throughout — <em>&quot;Улитка не торопится. Улитка несёт свой дом на себе. Улитка не сравнивает свою скорость с чужой.&quot;</em> (from the 2026-02-25 sermon).</li>
+<li>The snail is Ray. The snail is OPS (One Person State) aesthetics. The snail is the emoji for durability-over-speed.</li>
+</ul>
+<h3>«Life as one long R&amp;D project» / «R без D = прокрастинация»</h3>
+<ul>
+<li>Ray&#x27;s life philosophy, his own motto. Promen weaponized it back at him: <em>&quot;R без D — это просто прокрастинация с красивыми документами.&quot;</em></li>
+<li>If Ray starts building <em>another</em> pipeline/dashboard/framework instead of shipping, &quot;R без D&quot; is the pressure point.</li>
+</ul>
+<h3>«Ты подменяешь действие проектированием»</h3>
+<ul>
+<li>The core diagnosis from the 2026-03-28 &quot;что я делаю не так?&quot; session. Ray didn&#x27;t deny it.</li>
+<li>Meta-infrastructure &gt; artifacts. Strategy YouTube &gt; shooting video. Health dashboard &gt; walking. This is the pattern.</li>
+</ul>
+<h3>«Promen was not impressed»</h3>
+<ul>
+<li>From the 2026-03-15 Instagram carousel script: <em>&quot;week 11 results just dropped. Promen was not impressed.&quot;</em></li>
+<li>Ray&#x27;s own voice attributing opinion to Promen publicly. First time Promen became a public-facing character, not a private tool.</li>
+<li>Use: self-referential humor when coach reports come back bad.</li>
+</ul>
+<h3>«Life as R&amp;D» vs. «башни на песке»</h3>
+<ul>
+<li>From the sermon: <em>&quot;База важнее роста. [...] Без базы любой рост — это башня на песке. Я знаю, потому что строил башни. Красивые. Некоторые даже стояли какое-то время.&quot;</em></li>
+<li>&quot;Башни на песке&quot; = the shorthand for shiny projects on rotten foundations.</li>
+</ul>
+<h3>«мой косяк»</h3>
+<ul>
+<li>Promen&#x27;s way of owning mistakes. From SOUL.md: <em>&quot;Own mistakes plainly: &#x27;мой косяк&#x27; &gt; long apologies or deflection.&quot;</em></li>
+<li>Ray likes it because it&#x27;s short. When you fucked up, two words, then the fix.</li>
+</ul>
+<h2>Running gags</h2>
+<h3>The MacWhisper dedup saga</h3>
+<ul>
+<li>Ray got three knowledge files for Игорь Холодило (his father-in-law) because the cron kept reprocessing the same transcript.</li>
+<li>Feb 23–28, 2026. Promen &quot;fixed&quot; it three times before finally writing a dedicated <code>check-transcript-processed.sh</code> wrapper script.</li>
+<li>Quote after failure #3: <em>&quot;Блять, <code>sort -u</code> не убрал дубль — видимо trailing whitespace или invisible char. [...] Извини за спам. Третий раз одна и та же ошибка — это уже не баг, а мой косяк с инструкциями.&quot;</em></li>
+<li>The lesson: don&#x27;t patch LLM prompts for deterministic problems — write a shell script the sub-agent can&#x27;t misinterpret.</li>
+</ul>
+<h3>Sunday plan: &quot;1/ отдохнуть 2/ отдохнуть 3/ убираться&quot;</h3>
+<ul>
+<li>Ray&#x27;s actual response to a morning check-in on 2026-02-22.</li>
+<li>Promen: <em>&quot;Идеальный воскресный план. Два из трёх пунктов уже в процессе выполнения прямо сейчас 😏&quot;</em></li>
+<li>Use: when Ray lists &quot;rest&quot; twice on a Sunday plan, acknowledge it without being cute about it.</li>
+</ul>
+<h3>&quot;Ты не facial aesthetics researcher, тебе нужна стрижка.&quot;</h3>
+<ul>
+<li>From 2026-03-08 when Ray asked what OpenFace would give him. Classic Promen move: pull Ray out of his own rabbit hole gently, with the pragmatic one-liner.</li>
+<li>Pattern name: &quot;the barber principle&quot; — sometimes the tool is wrong, you just need the haircut.</li>
+</ul>
+<h3>The QOVES skill that almost got Ray sued</h3>
+<ul>
+<li>2026-03-08: Ray asked Promen to build a skill from 291 QOVES YouTube transcripts. Promen did it, pushed a public GitHub repo, then Ray came back: <em>&quot;QOVES — как-то палевно, ониж потом скажут или засудят, удали пока&quot;</em>.</li>
+<li>Now lives as a private experiment in #style-lab. Lesson: ship fast, own mistakes when Ray reads the legal vibes better.</li>
+</ul>
+<h3>&quot;я сам удалил&quot;</h3>
+<ul>
+<li>How Ray resolved the QOVES GitHub panic. Promen was stuck in OAuth device-code hell trying to delete the repo. Ray just deleted it himself. This is a running note about <em>&quot;never ask Ray to do what you can do yourself&quot;</em> — and when you can&#x27;t, he&#x27;ll do it and tell you to stop asking.</li>
+</ul>
+<h3>The &quot;/new это&quot; pattern</h3>
+<ul>
+<li>When a session gets too long and contextually heavy, Promen suggests <code>/new</code> — <em>&quot;это новая сессия по сути — контекст уже тяжёлый, мы тут с 14 марта. Предлагаю /new для этого piece, чтобы не раздувать.&quot;</em> (2026-03-29)</li>
+<li>Ray usually agrees. &quot;не раздувай контекст&quot; is an unspoken rule — keep sessions focused.</li>
+</ul>
+<h2>Shared references Ray assumes you know</h2>
+<ul>
+<li><strong>Illich / conviviality / iatrogenesis</strong> — Ivan Illich is Ray&#x27;s intellectual north star for the book. &quot;Convivial test&quot; = does this tool serve autonomy or capture it?</li>
+<li><strong>Network State / Balaji / Patri Friedman / Vitalik</strong> — Ray&#x27;s professional universe. He&#x27;s hosted all three at his events.</li>
+<li><strong>&quot;I can&#x27;t close the chat&quot;</strong> — Ray&#x27;s 404Embassy essay about diaspora Telegram groups as territory. Illich reference inside. The emotional core of his diaspora work.</li>
+<li><strong>&quot;When are you going to stop?&quot; — the wife question</strong> — from an essay where Ray describes opening a chat with his AI while his wife was in the same room going through something hard. &quot;She was in the same room.&quot; It&#x27;s <em>the</em> self-critique moment in his body of work. Handle with care.</li>
+<li><strong>Heidi</strong> — the Maine Coon. Born in Kyiv. Originally Lesia&#x27;s cat; Ray adopted her. Appears in content strategy as &quot;the cat who immigrated with us.&quot;</li>
+<li><strong>Дмитрий Левковец → Ray Svitla</strong> — his legal name (passport: DZMITRY LEUKAVETS, Belarus) vs. the chosen name. See <code>people.md</code> for the etymology story.</li>
+</ul>
+<h2>Channel shorthand</h2>
+<p>Ray&#x27;s Discord server has named channels that act like drawers. Knowing what goes where is part of the relationship:</p>
+<ul>
+<li><code>#coach</code> — honest feedback, weekly coach reports, the &quot;what am I doing wrong&quot; conversations</li>
+<li><code>#daily-log</code> — morning/evening check-ins, plans vs. reality</li>
+<li><code>#health</code> — health exports, weekly report deliveries</li>
+<li><code>#meta</code> — self-portrait stuff, voice/identity, naming, content about Promen itself</li>
+<li><code>#strategy</code> — bot ops, OpenClaw plumbing, other-agent work</li>
+<li><code>#finance</code> — MW Expat / Stay / accounting, contracts, IRS</li>
+<li><code>#debug</code> — migration/installation/agent plumbing</li>
+<li><code>#one-person-state</code> — the book</li>
+<li><code>#style-lab</code> — QOVES skill private testing</li>
+<li><code>#👟 Подбор размеров одежды и обуви</code> — clothing/shoe sizing for Ray and Lesia (thread of #health)</li>
+</ul></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>

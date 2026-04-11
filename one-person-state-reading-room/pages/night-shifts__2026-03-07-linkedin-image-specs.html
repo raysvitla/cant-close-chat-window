@@ -1,0 +1,619 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LinkedIn Content Calendar — Image Specifications — Reading Room</title><style>
+:root {
+  --bg:#060606; --panel:#0e0e0e; --panel2:#131313; --text:#f3f3ec; --muted:#9fa39a; --acid:#d7ff35; --line:#2a2a2a;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif} a{color:var(--acid);text-decoration:none} a:hover{text-decoration:underline}
+body{line-height:1.55}.shell{display:grid;grid-template-columns:320px 1fr;min-height:100vh}.sidebar{padding:20px;border-right:1px solid var(--line);background:linear-gradient(180deg,#0a0a0a,#050505);position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.big{font-size:36px;line-height:.92;text-transform:uppercase;font-weight:800;letter-spacing:-.04em;margin:0 0 12px}.note{font-size:13px;color:var(--muted);margin:0 0 18px}
+.search{width:100%;padding:12px 14px;background:#111;border:1px solid var(--line);color:var(--text);margin:0 0 12px}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.filter{border:1px solid var(--line);padding:6px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;color:var(--muted);background:transparent}.filter.active{border-color:var(--acid);color:var(--acid)}
+.list{display:flex;flex-direction:column;gap:8px}.item{display:block;padding:10px 12px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.item:hover{border-color:var(--acid);text-decoration:none}.item .meta{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}.item .title{font-weight:700;font-size:14px;line-height:1.25}.item .path{margin-top:6px;font-size:11px;color:#777;word-break:break-all}
+.main{padding:28px 32px 56px}.hero{border:1px solid var(--line);padding:20px;background:radial-gradient(circle at top right,rgba(215,255,53,.08),transparent 40%),var(--panel)}.hero-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acid)}.hero h1{margin:8px 0 16px;font-size:64px;line-height:.9;text-transform:uppercase;letter-spacing:-.06em}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.stat{border:1px solid var(--line);padding:12px;background:var(--panel2)}.stat .n{font-size:28px;font-weight:800;color:var(--acid)}.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:20px}.card{border:1px solid var(--line);padding:16px;background:var(--panel)}.card h2{margin:0 0 10px;font-size:18px;text-transform:uppercase;letter-spacing:.04em}.card p,.card li{color:#d8d8d0}
+article.page{max-width:960px;margin:0 auto}.page-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:22px}.page-head h1{font-size:44px;line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.page-meta{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.page-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-block;padding:10px 12px;border:1px solid var(--line);background:var(--panel2);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.btn:hover{border-color:var(--acid);text-decoration:none}
+.prose h1,.prose h2,.prose h3,.prose h4{margin:1.8em 0 .6em;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}.prose h1{font-size:38px}.prose h2{font-size:28px}.prose h3{font-size:22px}.prose h4{font-size:18px}.prose p,.prose li,.prose blockquote{font-size:18px;color:#ecece2}.prose ul,.prose ol{padding-left:22px}.prose hr{border:none;border-top:1px solid var(--line);margin:24px 0}.prose blockquote{border-left:3px solid var(--acid);padding-left:14px;color:#d8d8d0}.prose code{background:#101010;padding:.12em .35em;border:1px solid var(--line);font-family:ui-monospace,SFMono-Regular,monospace;font-size:.92em}.prose pre.code{padding:14px;background:#0a0a0a;border:1px solid var(--line);overflow:auto}
+.table-wrap{overflow:auto;border:1px solid var(--line);margin:16px 0}.table-wrap table{width:100%;border-collapse:collapse}.table-wrap th,.table-wrap td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.tag{display:inline-block;border:1px solid var(--line);padding:5px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-right:8px}.ribbon{margin-top:16px;font-size:11px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;overflow:hidden;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:980px){.shell{grid-template-columns:1fr}.sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--line)}.hero-grid,.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.page-head{flex-direction:column}.page-head h1{font-size:32px}}
+</style></head><body><article class="page main"><div class="page-head"><div><div class="page-meta">404embassy / one person state / reading room</div><h1>LinkedIn Content Calendar — Image Specifications</h1><div class="page-meta">Night Shifts · night-shifts/2026-03-07-linkedin-image-specs.md</div></div><div class="page-actions"><a class="btn" href="../index.html">Archive index</a><a class="btn" href="../files/night-shifts__2026-03-07-linkedin-image-specs.md">Raw markdown</a></div></div><div class="prose"><h1>LinkedIn Content Calendar — Image Specifications</h1>
+<h2>10 posts requiring visual backups for code/terminal/formatted content</h2>
+<p><em>compiled: 2026-03-07</em></p>
+<p><em>designer: Pablo (W+K Visual Strategy)</em></p>
+<p><em>reference: self.md design language</em></p>
+<hr>
+<h2>Design Language: self.md</h2>
+<h3>Global Styling (apply to ALL images)</h3>
+<pre class="code"><code data-lang="">
+BACKGROUND:    #0f0f12 (self.md dark)
+BORDER:        1px solid rgba(65, 233, 141, 0.18)
+BORDER RADIUS: 8px
+BOX SHADOW:    0 4px 20px rgba(0, 0, 0, 0.3)
+PADDING:       48px all sides (64px top for language label)
+FONT:          JetBrains Mono (fallback: SF Mono, Menlo, monospace)
+FONT SIZE:     18px (adjust per image to fit content)
+LINE HEIGHT:   1.6
+</code></pre>
+<h3>Color Palette</h3>
+<pre class="code"><code data-lang="">
+TEXT (default):     #c9d1d9  (light gray body text)
+GREEN ACCENT:       #41E98D  (primary brand — links, selections)
+LIGHT GREEN:        #6DF0A8  (operators, tags, + diff lines)
+SOFT GREEN:         #98c379  (strings, added content)
+PURPLE:             #B4A0FF  (highlights, special elements)
+CYAN:               #5cc9df  (keywords)
+ORANGE:             #ffb366  (classes, warnings, variables)
+COMMENT GRAY:       #5c6370  (comments, muted text, italic)
+MUTED TEXT:         rgba(255, 255, 255, 0.5)
+DELETED/RED:        #e06c75  (- diff lines, errors)
+</code></pre>
+<h3>Decorative Elements</h3>
+<pre class="code"><code data-lang="">
+LANGUAGE LABEL:    top-left, 10px, uppercase, letter-spacing 0.08em, #5c6370
+WATERMARK:         &quot;self.md&quot; bottom-right, 10px, #5c6370, 40% opacity
+GRID OVERLAY:      optional — subtle 60px grid lines at rgba(65,233,141,0.04)
+GREEN GLOW:        optional — subtle radial gradient from top-right corner
+                   rgba(65,233,141,0.08) fading to transparent
+</code></pre>
+<h3>LinkedIn Image Dimensions</h3>
+<pre class="code"><code data-lang="">
+SQUARE:     1080 × 1080 px  (default, works in all feeds)
+PORTRAIT:   1080 × 1350 px  (more real estate, good for long content)
+</code></pre>
+<hr>
+<h2>DAY 1 — Incident Report {#day-1}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1350 (portrait — content is tall)</p>
+<p><strong>Language label:</strong> <code>INCIDENT REPORT</code></p>
+<p><strong>Font size:</strong> 17px</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="">
+[INCIDENT REPORT]
+date: 2024
+severity: critical
+system: ray.svitla.os
+
+event:
+  7-figure net worth → insolvent
+  
+root cause:
+  not crypto. not scams. not bad trades.
+  context switching.
+
+diagnosis:
+  7 parallel builds running.
+  called it &quot;strategy.&quot;
+  it was avoidance with a flight itinerary.
+
+cascade:
+  fragmentation → latency → nothing ships
+  → cashflow gaps → debt spiral
+  → cognitive overload → wider gaps
+
+patch applied:
+  3-node constraint.
+  add a project → kill a project.
+  no exceptions.
+
+status: recovering.
+uptime: 71% and climbing.
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th><th>note</th></tr></thead><tbody>
+<tr><td><code>[INCIDENT REPORT]</code></td><td>#ffb366 (orange)</td><td>bold, slightly larger (20px)</td></tr>
+<tr><td><code>date:</code> <code>severity:</code> <code>system:</code> <code>event:</code> etc.</td><td>#5cc9df (cyan)</td><td>field labels</td></tr>
+<tr><td><code>critical</code></td><td>#e06c75 (red)</td><td>severity highlight</td></tr>
+<tr><td><code>ray.svitla.os</code></td><td>#B4A0FF (purple)</td><td>system name</td></tr>
+<tr><td>all values</td><td>#c9d1d9 (default gray)</td><td></td></tr>
+<tr><td><code>3-node constraint</code></td><td>#41E98D (green accent)</td><td>the key concept — make it glow</td></tr>
+<tr><td><code>71%</code></td><td>#6DF0A8 (light green)</td><td>positive number</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>the <code>→</code> arrows in the cascade section should form a visual waterfall — each indented slightly</li>
+<li>consider a subtle pulsing green dot next to &quot;status: recovering&quot; to suggest a live system</li>
+<li>this is the SERIES OPENER image. it sets the visual language for all 10 images. get this right first.</li>
+</ul>
+<hr>
+<h2>DAY 2 — Git Diff {#day-2}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1350 (portrait — diff is tall)</p>
+<p><strong>Language label:</strong> <code>DIFF</code></p>
+<p><strong>Font size:</strong> 16px</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="diff">
+- governance OS 2.0 (nation-state)
++ governance OS 3.0 (composable)
+
+- source: partially open (&quot;constitution&quot;)
+- good luck submitting a pull request
++ source: forkable modules
++ anyone can submit, fork, or deploy
+
+- user accounts: &quot;citizenship&quot;
+- onboarding: birth
+- offboarding: difficult and costly
++ identity: self-custodied keys
++ onboarding: opt-in
++ offboarding: your choice
+
+- upgrade path: revolution or civil war
++ upgrade path: fork
+
+- annual overhead: $18 trillion
+- moat: monopoly on violence
++ overhead: TBD
++ moat: none needed
+
+# reviewed by: nobody
+# merged by: history
+# rollback: not supported
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th><th>background</th></tr></thead><tbody>
+<tr><td>all <code>- </code> lines</td><td>#e06c75 (red)</td><td>rgba(224, 108, 117, 0.08) subtle red bg</td></tr>
+<tr><td>all <code>+ </code> lines</td><td>#98c379 (soft green)</td><td>rgba(152, 195, 121, 0.08) subtle green bg</td></tr>
+<tr><td><code># </code> comment lines</td><td>#5c6370 (comment gray)</td><td>none</td></tr>
+<tr><td><code>-</code> and <code>+</code> symbols</td><td>same as line but bold</td><td></td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>this is a DIFF. the red/green contrast IS the message. make it prominent.</li>
+<li>each <code>-</code>/<code>+</code> pair should be visually grouped with slight spacing between groups</li>
+<li>the <code>#</code> comment lines at the bottom should feel like afterthoughts — smaller, grayer, set apart by extra spacing</li>
+<li>consider a thin vertical green line on the left margin (like GitHub&#x27;s diff view)</li>
+</ul>
+<hr>
+<h2>DAY 6 — Python Code {#day-6}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1350 (portrait)</p>
+<p><strong>Language label:</strong> <code>PYTHON</code></p>
+<p><strong>Font size:</strong> 15px (code is dense)</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="python">
+class NationState:  # in production since 1648. no tests.
+    def defend(self, threat):
+        if threat.type == &quot;crypto&quot;:
+            return self.regulate(threat)
+        if threat.type == &quot;DAO&quot;:
+            return self.regulate(threat)
+        if threat.type == &quot;network_state&quot;:
+            return self.regulate(threat)
+    
+    def regulate(self, threat):
+        threat.add_forms(9000)
+        threat.require_kyc()
+        threat.hire_compliance_officer()
+        time.sleep(years=5)
+        # threat is now a fintech startup.
+        # mission accomplished.
+        return threat.now_a_startup()
+    
+    def handle_revolution(self):
+        return &quot;Netflix released a new season&quot;
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th></tr></thead><tbody>
+<tr><td><code>class</code> <code>def</code> <code>if</code> <code>return</code></td><td>#5cc9df (cyan keywords)</td></tr>
+<tr><td><code>NationState</code></td><td>#ffb366 (orange class)</td></tr>
+<tr><td><code>self</code></td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>threat</code> <code>time</code></td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>.type</code> <code>.add_forms</code> <code>.require_kyc</code> etc.</td><td>#c9a0dc (purple methods)</td></tr>
+<tr><td><code>&quot;crypto&quot;</code> <code>&quot;DAO&quot;</code> <code>&quot;network_state&quot;</code> <code>&quot;Netflix...&quot;</code></td><td>#98c379 (green strings)</td></tr>
+<tr><td><code>==</code></td><td>#6DF0A8 (light green operator)</td></tr>
+<tr><td><code>(9000)</code> <code>(years=5)</code></td><td>#c9a0dc (purple numbers)</td></tr>
+<tr><td><code># in production since 1648...</code> etc.</td><td>#5c6370 (comment gray, italic)</td></tr>
+<tr><td><code>(</code> <code>)</code> <code>:</code></td><td>#7a8394 (punctuation)</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>standard Python syntax highlighting. follow self.md&#x27;s Chroma scheme exactly.</li>
+<li>the comment &quot;in production since 1648. no tests.&quot; should be visible but muted — the humor lives in the contrast between the serious class name and the casual comment.</li>
+<li>indentation must be pixel-perfect. this is code. devs will notice.</li>
+</ul>
+<hr>
+<h2>DAY 9 — Pitch Deck Slide {#day-9}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1080 (square — pitch deck slides are square)</p>
+<p><strong>Language label:</strong> <code>SLIDE 7 / 12</code></p>
+<p><strong>Font size:</strong> 16px</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="">
+TAM
+
+governance.
+the largest market on earth.
+~$18 trillion annual overhead.
+virtually zero innovation in a century.
+
+customer satisfaction:
+  — global trust: 52% (Edelman, 2024)
+  — U.S. trust: 70% (1960s) → 22% (now)
+  — 44% plurality: actively distrust
+
+competitive landscape:
+  — incumbent: nation-state (est. ~1648)
+  — last major upgrade: representative democracy
+  — upgrade method: revolution (high CAC)
+
+new entrants:
+  — DAO treasuries: $18.4B
+  — charter cities: JaaS
+  — modular protocols: AWS for governance
+
+status: pre-revenue.
+de-risked by millennia of failed states.
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th></tr></thead><tbody>
+<tr><td><code>TAM</code></td><td>#ffb366 (orange) bold, 28px</td></tr>
+<tr><td><code>SLIDE 7 / 12</code> (label)</td><td>#5c6370 (muted)</td></tr>
+<tr><td>section headers (<code>customer satisfaction:</code> etc.)</td><td>#5cc9df (cyan)</td></tr>
+<tr><td><code>—</code> bullet dashes</td><td>#41E98D (green accent)</td></tr>
+<tr><td>percentages and numbers</td><td>#B4A0FF (purple)</td></tr>
+<tr><td><code>$18 trillion</code> <code>$18.4B</code></td><td>#6DF0A8 (light green) bold</td></tr>
+<tr><td><code>(high CAC)</code> <code>(Edelman, 2024)</code> <code>(est. ~1648)</code></td><td>#5c6370 (comment gray)</td></tr>
+<tr><td>body text</td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>[NEXT SLIDE →]</code></td><td>bottom-right, #41E98D, 12px</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>this should feel like a real pitch deck slide rendered in terminal aesthetic</li>
+<li>&quot;TAM&quot; should be the dominant element — big, orange, top-left</li>
+<li>consider a subtle slide navigation indicator at the bottom: <code>● ● ● ● ● ● ◉ ● ● ● ● ●</code> where the 7th dot is highlighted green</li>
+<li>the contrast between VC language and terminal aesthetic is the point</li>
+</ul>
+<hr>
+<h2>DAY 12 — Agent Terminal Log {#day-12}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1350 (portrait — conversation is long)</p>
+<p><strong>Language label:</strong> <code>TERMINAL</code></p>
+<p><strong>Font size:</strong> 16px</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="">
+23:47 [agent] starting research: &quot;one-person 
+       state feasibility&quot;
+23:47 [agent] estimated duration: 4-6 hours.
+       go to sleep.
+
+04:23 [agent] research complete.
+04:23 [agent] 47 sources. 3 contradictions found. 
+04:23 [agent] key finding: sam altman says single 
+       founder → billion-dollar company.
+04:23 [agent] adjusted question: how soon until 
+       single person → state?
+04:24 [agent] a state is not a currency or a discord 
+       with better branding.
+04:24 [agent] a state = identity + decisions + budget 
+       + diplomacy
+04:24 [agent] pipeline: personal OS → founder OS → 
+       civic OS
+04:25 [agent] recommendation: you already have 
+       step 1. ship step 2.
+04:25 [agent] also: you have 4 unread messages from 
+       your wife.
+04:25 [agent] priority override: respond to wife 
+       first.
+
+07:41 [ray] ...
+07:41 [ray] good call on the priority override.
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th></tr></thead><tbody>
+<tr><td><code>23:47</code> <code>04:23</code> <code>04:24</code> <code>04:25</code> <code>07:41</code></td><td>#5c6370 (timestamp gray)</td></tr>
+<tr><td><code>[agent]</code></td><td>#5cc9df (cyan)</td></tr>
+<tr><td><code>[ray]</code></td><td>#B4A0FF (purple)</td></tr>
+<tr><td><code>&quot;one-person state feasibility&quot;</code></td><td>#98c379 (green string)</td></tr>
+<tr><td><code>47 sources</code> <code>3 contradictions</code></td><td>#ffb366 (orange numbers)</td></tr>
+<tr><td><code>priority override</code></td><td>#e06c75 (red — urgency)</td></tr>
+<tr><td><code>respond to wife first</code></td><td>#41E98D (green — correct priority)</td></tr>
+<tr><td><code>...</code> (ray&#x27;s response)</td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>good call on the priority override.</code></td><td>#c9d1d9 (default)</td></tr>
+<tr><td>all other text</td><td>#c9d1d9 (default)</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>the TIME GAP between 23:47 and 04:23 is critical. add extra vertical space there — maybe a subtle dividing line or <code>...</code> in comment gray to suggest hours passing.</li>
+<li>the <code>[agent]</code> / <code>[ray]</code> distinction should be immediately clear — two different speakers, two different colors.</li>
+<li>the &quot;priority override&quot; line should feel like a system alert interrupting the research report</li>
+<li>the final two <code>[ray]</code> lines should have a slight delay feel — maybe slightly more spacing between them, suggesting he just woke up</li>
+</ul>
+<hr>
+<h2>DAY 13 — System Diagnostic {#day-13}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1350 (portrait)</p>
+<p><strong>Language label:</strong> <code>DIAGNOSTIC</code></p>
+<p><strong>Font size:</strong> 16px</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="">
+SYSTEM DIAGNOSTIC: ray.os
+date: wednesday
+active_contexts: 7
+
+WARNING: cognitive RAM exceeded.
+WARNING: context_switching_cost = 23 min per 
+         interrupt (Gloria Mark, 2023)
+WARNING: active_guilt_pings this week: 14
+WARNING: deep_work_sessions_completed: 0
+WARNING: you called this &quot;portfolio strategy&quot;
+WARNING: your investors called it 
+         &quot;diversification&quot;
+WARNING: your wife called it &quot;that thing you do 
+         where you&#x27;re busy but nothing moves&quot;
+
+RECOMMENDATION: 
+  reduce active_contexts to ≤ 3
+  route everything else to /dev/null
+  stop pretending the fan noise is productivity
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th></tr></thead><tbody>
+<tr><td><code>SYSTEM DIAGNOSTIC:</code></td><td>#5cc9df (cyan) bold</td></tr>
+<tr><td><code>ray.os</code></td><td>#B4A0FF (purple)</td></tr>
+<tr><td><code>wednesday</code></td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>active_contexts: 7</code></td><td>#e06c75 (red — exceeded)</td></tr>
+<tr><td><code>WARNING:</code> (each instance)</td><td>#ffb366 (orange) bold</td></tr>
+<tr><td>warning text</td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>23 min</code> <code>14</code> <code>0</code> <code>7</code></td><td>#e06c75 (red numbers — all bad)</td></tr>
+<tr><td><code>&quot;portfolio strategy&quot;</code> <code>&quot;diversification&quot;</code></td><td>#98c379 (green strings — ironic)</td></tr>
+<tr><td><code>&quot;that thing you do...&quot;</code></td><td>#98c379 (green string)</td></tr>
+<tr><td><code>(Gloria Mark, 2023)</code></td><td>#5c6370 (comment gray)</td></tr>
+<tr><td><code>RECOMMENDATION:</code></td><td>#41E98D (green) bold</td></tr>
+<tr><td>recommendation text</td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>≤ 3</code></td><td>#6DF0A8 (light green — the goal)</td></tr>
+<tr><td><code>/dev/null</code></td><td>#B4A0FF (purple)</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>the WARNING lines should stack like a system log that&#x27;s getting increasingly personal</li>
+<li>each WARNING should be on its own line with consistent left alignment</li>
+<li>the escalation from technical (&quot;cognitive RAM&quot;) to personal (&quot;your wife called it...&quot;) should feel like the diagnostic is becoming self-aware</li>
+<li>RECOMMENDATION section should feel like a relief after the wall of warnings — slightly more spacing above it</li>
+</ul>
+<hr>
+<h2>DAY 16 — Support Ticket {#day-16}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1350 (portrait)</p>
+<p><strong>Language label:</strong> <code>SUPPORT TICKET</code></p>
+<p><strong>Font size:</strong> 16px</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="">
+SUPPORT TICKET #00000001
+submitted by: Anya
+subject: identity not found
+
+description:
+  fled conflict zone. crossed border.
+  state-issued identity no longer recognized.
+  
+current status in OS 2.0: ghost.
+  cannot open bank account.
+  cannot rent apartment.
+  cannot prove she exists.
+
+proposed solution (OS 3.0):
+  identity = self-custodied cryptographic keys
+  proof-of-humanity verified on-chain
+  payments, reputation, access
+  no permission required
+  
+ticket status: open since 1951.
+assigned to: nobody.
+priority: &quot;we&#x27;ll get back to you.&quot;
+escalation path: post about it on LinkedIn.
+                  oh wait.
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th></tr></thead><tbody>
+<tr><td><code>SUPPORT TICKET #00000001</code></td><td>#ffb366 (orange) bold, 20px</td></tr>
+<tr><td><code>submitted by:</code> <code>subject:</code> field labels</td><td>#5cc9df (cyan)</td></tr>
+<tr><td><code>Anya</code></td><td>#B4A0FF (purple) — she&#x27;s a person, not a data point</td></tr>
+<tr><td><code>identity not found</code></td><td>#e06c75 (red)</td></tr>
+<tr><td><code>description:</code></td><td>#5cc9df (cyan)</td></tr>
+<tr><td>description text</td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>ghost.</code></td><td>#e06c75 (red) bold</td></tr>
+<tr><td><code>cannot</code> (each instance)</td><td>#e06c75 (red)</td></tr>
+<tr><td><code>proposed solution (OS 3.0):</code></td><td>#41E98D (green)</td></tr>
+<tr><td>solution text</td><td>#98c379 (soft green — hope)</td></tr>
+<tr><td><code>open since 1951.</code></td><td>#e06c75 (red)</td></tr>
+<tr><td><code>nobody.</code></td><td>#e06c75 (red)</td></tr>
+<tr><td><code>&quot;we&#x27;ll get back to you.&quot;</code></td><td>#5c6370 (comment gray — bitter)</td></tr>
+<tr><td><code>escalation path:</code></td><td>#5cc9df (cyan)</td></tr>
+<tr><td><code>post about it on LinkedIn. oh wait.</code></td><td>#5c6370 (comment gray — humor as cope)</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>the ticket format should feel like an actual support system — think Zendesk or Jira but stripped to monospace</li>
+<li>the emotional weight is in the contrast: bureaucratic format, human crisis</li>
+<li><code>ghost.</code> should stand out. maybe a subtle red glow behind it.</li>
+<li>the &quot;escalation path&quot; humor at the end needs to feel like gallows humor, not flippancy. the gray color helps — it reads as an aside.</li>
+<li>consider a subtle &quot;1 of 89.3M&quot; in the top-right corner (approximate global displaced persons) — or omit if it feels like data decoration</li>
+</ul>
+<hr>
+<h2>DAY 18 — Git Commit Message {#day-18}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1080 (square)</p>
+<p><strong>Language label:</strong> <code>GIT COMMIT</code></p>
+<p><strong>Font size:</strong> 16px</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="">
+commit 4a7f2e1
+Author: ray &lt;ray@self.md&gt;
+Date:   Thu Mar 19 2026
+
+  kill skill store from MVP.
+
+  reason: can&#x27;t build it well in 2 weeks. 
+  shipping it badly trains users to expect 
+  something we can&#x27;t maintain.
+  
+  replacing with: context export from existing 
+  sources. less exciting. more honest.
+  
+  nobody will write a LinkedIn post about this 
+  decision. there&#x27;s no framework for &quot;i cut the 
+  interesting thing and kept the boring thing.&quot;
+  
+  but this is the entire job.
+  
+  files changed: 14
+  lines removed: 2,847
+  dopamine cost: significant
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th></tr></thead><tbody>
+<tr><td><code>commit</code></td><td>#5cc9df (cyan keyword)</td></tr>
+<tr><td><code>4a7f2e1</code></td><td>#ffb366 (orange hash)</td></tr>
+<tr><td><code>Author:</code> <code>Date:</code></td><td>#5cc9df (cyan)</td></tr>
+<tr><td><code>ray</code></td><td>#B4A0FF (purple)</td></tr>
+<tr><td><code>&lt;ray@self.md&gt;</code></td><td>#5c6370 (gray — email)</td></tr>
+<tr><td><code>Thu Mar 19 2026</code></td><td>#c9d1d9 (default)</td></tr>
+<tr><td>commit message body</td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>&quot;i cut the interesting thing...&quot;</code></td><td>#98c379 (green string)</td></tr>
+<tr><td><code>files changed: 14</code></td><td>#c9d1d9</td></tr>
+<tr><td><code>lines removed: 2,847</code></td><td>#e06c75 (red — deletions)</td></tr>
+<tr><td><code>dopamine cost: significant</code></td><td>#ffb366 (orange — not a real git field, that&#x27;s the joke)</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>this should look exactly like <code>git log --format=full</code> output</li>
+<li>the commit hash should be truncated (7 chars) like real git</li>
+<li>the <code>ray@self.md</code> email is subtle brand placement — make it visible but not highlighted</li>
+<li>the joke is that &quot;dopamine cost&quot; is formatted identically to &quot;files changed&quot; and &quot;lines removed&quot; — as if it&#x27;s a standard git metric. don&#x27;t differentiate it visually. the uniformity IS the humor.</li>
+</ul>
+<hr>
+<h2>DAY 26 — Man Page {#day-26}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1350 (portrait — this is the longest formatted post)</p>
+<p><strong>Language label:</strong> <code>MAN PAGE</code></p>
+<p><strong>Font size:</strong> 14px (dense content — needs to fit)</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="">
+NATION-STATE(1)       LEGACY SYSTEMS       NATION-STATE(1)
+
+NAME
+    nation-state — monolithic governance runtime
+    
+SYNOPSIS
+    nation-state [--constitution FILE] [--citizens N]
+    
+DESCRIPTION
+    On-premise governance suite, est. ~1648. Source 
+    partially open. User accounts (&quot;citizenship&quot;) 
+    provisioned at birth. Off-boarding difficult. 
+    Upgrade path: revolution (DANGEROUS) or civil 
+    war (DEPRECATED).
+    
+    Running 18th-century algorithms on 21st-century 
+    hardware. Known to panic under load. Panics 
+    historically labeled &quot;revolutions.&quot;
+
+OPTIONS
+    --democracy     experimental. requires constant
+                    manual intervention. see BUGS.
+    --fork          exit current instance. may void
+                    warranty and passport.
+    --protest       rate-limited. see local laws.
+    
+BUGS
+    Vendor lock-in by design. Pull requests to 
+    constitution require mass mobilization. 
+    Response time measured in decades.
+    
+SEE ALSO
+    network-state(3), dao(7), charter-city(5)
+    
+HISTORY
+    Approximately 300 years without major refactor.
+    Maintenance cost: $18T/year.
+    No maintainer on call.
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th></tr></thead><tbody>
+<tr><td><code>NATION-STATE(1)</code> header (both)</td><td>#c9d1d9 bold, 16px</td></tr>
+<tr><td><code>LEGACY SYSTEMS</code> center header</td><td>#5c6370 (gray)</td></tr>
+<tr><td><code>NAME</code> <code>SYNOPSIS</code> <code>DESCRIPTION</code> <code>OPTIONS</code> <code>BUGS</code> <code>SEE ALSO</code> <code>HISTORY</code></td><td>#ffb366 (orange section headers) bold</td></tr>
+<tr><td><code>nation-state</code> (in NAME)</td><td>#B4A0FF (purple)</td></tr>
+<tr><td><code>--constitution</code> <code>--citizens</code> <code>--democracy</code> <code>--fork</code> <code>--protest</code></td><td>#41E98D (green flags)</td></tr>
+<tr><td><code>FILE</code> <code>N</code></td><td>#5cc9df (cyan arguments)</td></tr>
+<tr><td><code>(DANGEROUS)</code></td><td>#e06c75 (red)</td></tr>
+<tr><td><code>(DEPRECATED)</code></td><td>#e06c75 (red)</td></tr>
+<tr><td><code>network-state(3)</code> <code>dao(7)</code> <code>charter-city(5)</code></td><td>#B4A0FF (purple references)</td></tr>
+<tr><td><code>$18T/year</code></td><td>#6DF0A8 (light green)</td></tr>
+<tr><td><code>No maintainer on call.</code></td><td>#e06c75 (red — the kicker)</td></tr>
+<tr><td>all other body text</td><td>#c9d1d9 (default)</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>this MUST look like an actual Unix man page. the three-column header, the section formatting, the indentation — all must be accurate.</li>
+<li>the OPTIONS section is the humor payload. <code>--protest rate-limited. see local laws.</code> is the punchline. it should be formatted identically to <code>--democracy</code> and <code>--fork</code> — the joke is in the uniformity.</li>
+<li><code>SEE ALSO</code> references to <code>network-state(3)</code>, <code>dao(7)</code>, <code>charter-city(5)</code> imply a whole ecosystem of alternative governance man pages. don&#x27;t explain this. let the devs get it.</li>
+<li><code>No maintainer on call.</code> as the last line should feel like a system status that&#x27;s both funny and terrifying.</li>
+<li>this is the SIGNATURE visual piece. it&#x27;s the one people will screenshot most. prioritize quality.</li>
+</ul>
+<hr>
+<h2>DAY 29 — Field Notes Header {#day-29}</h2>
+<p><strong>Dimensions:</strong> 1080 × 1080 (square — only the header block)</p>
+<p><strong>Language label:</strong> <code>FIELD NOTES</code></p>
+<p><strong>Font size:</strong> 20px (less text, bigger font)</p>
+<h3>Exact Text</h3>
+<pre class="code"><code data-lang="">
+FIELD NOTES: founder OS sessions
+duration: 2 months
+participants: [redacted]
+finding: OS scales. vibes don&#x27;t.
+</code></pre>
+<h3>Color Mapping</h3>
+<div class="table-wrap"><table><thead><tr><th>element</th><th>color</th></tr></thead><tbody>
+<tr><td><code>FIELD NOTES:</code></td><td>#ffb366 (orange) bold, 24px</td></tr>
+<tr><td><code>founder OS sessions</code></td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>duration:</code> <code>participants:</code> <code>finding:</code></td><td>#5cc9df (cyan labels)</td></tr>
+<tr><td><code>2 months</code></td><td>#c9d1d9 (default)</td></tr>
+<tr><td><code>[redacted]</code></td><td>#e06c75 (red, with a black bar overlay effect)</td></tr>
+<tr><td><code>OS scales.</code></td><td>#41E98D (green — positive)</td></tr>
+<tr><td><code>vibes don&#x27;t.</code></td><td>#e06c75 (red — negative)</td></tr>
+</tbody></table></div>
+<h3>Design Notes</h3>
+<ul>
+<li>this is just the header block. 4 lines. make them BIG and bold.</li>
+<li><code>[redacted]</code> could have a redaction-bar visual effect — the text visible through a semi-transparent dark overlay, like a classified document</li>
+<li>the split color on the finding line (&quot;OS scales.&quot; in green, &quot;vibes don&#x27;t.&quot; in red) creates the visual punchline</li>
+<li>this image accompanies a longer text post — it&#x27;s the hook image, not the full content</li>
+<li>most white space of any image. let it breathe. the confidence of the formatting IS the statement.</li>
+</ul>
+<hr>
+<h2>Production Notes</h2>
+<h3>File Naming Convention</h3>
+<pre class="code"><code data-lang="">
+linkedin-day-XX-[format].png
+linkedin-day-01-incident-report.png
+linkedin-day-02-git-diff.png
+linkedin-day-06-python.png
+linkedin-day-09-pitch-deck.png
+linkedin-day-12-agent-log.png
+linkedin-day-13-diagnostic.png
+linkedin-day-16-support-ticket.png
+linkedin-day-18-git-commit.png
+linkedin-day-26-man-page.png
+linkedin-day-29-field-notes.png
+</code></pre>
+<h3>Export Settings</h3>
+<ul>
+<li>Format: PNG (for text clarity — no JPEG compression artifacts on monospace)</li>
+<li>Resolution: 2x (2160 × 2160 or 2160 × 2700) for retina displays</li>
+<li>Color space: sRGB</li>
+<li>Compression: maximum quality</li>
+</ul>
+<h3>Accessibility</h3>
+<ul>
+<li>every image should have alt text prepared (= the exact text content of the image)</li>
+<li>LinkedIn supports alt text on images — fill it in every time</li>
+<li>the alt text ensures screen readers can access the code-formatted content</li>
+</ul>
+<h3>Batch Production Recommendation</h3>
+<ol>
+<li>create a master template in Figma/Sketch with the self.md styling</li>
+<li>produce Day 1 first — it&#x27;s the series opener and sets the standard</li>
+<li>produce Day 26 (man page) second — it&#x27;s the most complex and the signature piece</li>
+<li>batch the remaining 8 after the template is locked</li>
+<li>QA: check every image on mobile at 375px width — text must still be readable</li>
+<li>generate all 10 BEFORE series launch day. no scrambling mid-series.</li>
+</ol>
+<h3>self.md Brand Consistency Notes</h3>
+<ul>
+<li>the green (#41E98D) is the primary brand color. it should appear in every image but never dominate — it&#x27;s an accent, not a background.</li>
+<li>the purple (#B4A0FF) is for interactive/special elements. in images, use it for names, references, and system identifiers.</li>
+<li>the overall feeling should be: &quot;this is a screenshot from a system that actually exists.&quot; not decorative. functional. beautiful by accident.</li>
+<li>no gradients on text. no drop shadows on text. no glow effects on text. the self.md aesthetic is flat, monospace, and precise.</li>
+</ul>
+<hr>
+<p><em>10 images. 1 design language. 0 carousels.</em></p></div><div class="ribbon">tool transfer · memory continuity · sovereignty research · body as territory · state as interface · exit as method · ray svitla · promen → hermes</div></article></body></html>
